@@ -1,0 +1,31 @@
+#!/bin/sh
+
+#
+#   TESTING stop script to stop the maildrop python process
+#
+
+# Set the maildrop main directory
+reldir=`dirname $0`
+if [ $reldir = "." ]; then
+    reldir=`pwd`;
+fi
+
+# Source the config to find the location of the spool/var folder
+. $reldir/config
+
+# Where is the pid file?
+if [ -z "$MAILDROP_VAR" ]
+then
+    MAILDROP_VAR=$MAILDROP_HOME/var
+fi
+
+if [ -z "$MAILDROP_PID_FILE" ]
+then
+    MAILDROP_PID_FILE=$MAILDROP_VAR/maildrop.pid
+fi
+
+# Kill the process
+kill `cat $MAILDROP_PID_FILE`
+
+# Remove the pid file
+rm -f $MAILDROP_PID_FILE

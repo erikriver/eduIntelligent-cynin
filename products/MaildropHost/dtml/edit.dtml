@@ -1,0 +1,136 @@
+<dtml-var manage_page_header>
+<dtml-var manage_tabs>
+
+<p class="form-help">
+  Use this form to edit the Maildrop Host properties.
+</p>
+
+<form action="manage_makeChanges" method="post">
+<table cellspacing="0" cellpadding="2" border="0">
+
+  <tr>
+    <td align="left" valign="top" class="form-label"> Id </td>
+    <td align="left" valign="top" class="form-text"> &dtml-getId; </td>
+  </tr>
+
+  <tr>
+    <td align="left" valign="top" class="form-optional"> Title </td>
+    <td align="left" valign="top">
+      <input type="text" name="title" size="40" value="&dtml-title;"/>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="left" valign="top" class="form-optional">
+      Transactional Mode
+    </td>
+    <td align="left" valign="top">
+      <dtml-let sel="isTransactional() and 'checked' or ''">
+        <input type="checkbox" name="transactional" &dtml-sel;/>
+      </dtml-let>
+    </td>
+  </tr>
+
+
+  <tr>
+    <td align="left" valign="top">&nbsp;</td>
+    <td align="left" valign="top" class="form-element">
+      <input class="form-element" type="submit" value="Save Changes"/> 
+    </td>
+  </tr>
+
+</table>
+</form>
+
+<p><br /></p>
+
+<table cellpadding="2" width="98%">
+  <tr class="list-header">
+    <td class="form-label"> Maildrop Daemon settings </td>
+  </tr>
+  <tr>
+    <td class="form-text">
+      These settings are used by the maildrop daemon. If you change
+      the configuration file on the file system you must also restart 
+      Zope to reflect the new settings on this screen.
+    </td>
+  </tr>
+</table>
+
+<br/>
+
+<table width="98%">
+
+  <tr>
+    <td align="left" valign="top" class="form-label"> Config file path </td>
+    <td align="left" valign="top" class="form-text"> &dtml-active_config_path; </td>
+  </tr>
+
+  <tr>
+    <td align="left" valign="top" class="form-label"> SMTP Host </td>
+    <td align="left" valign="top" class="form-text"> &dtml-smtp_host; </td>
+  </tr>
+
+  <tr>
+    <td align="left" valign="top" class="form-label"> SMTP Port </td>
+    <td align="left" valign="top" class="form-text"> &dtml-smtp_port; </td>
+  </tr>
+
+  <tr>
+    <td align="left" valign="top" class="form-label"> TLS usage </td>
+    <td align="left" valign="top" class="form-text"> &dtml-use_tls; </td>
+  </tr>
+
+  <tr>
+    <td align="left" valign="top" class="form-label"> SMTP Server Login </td>
+    <td align="left" valign="top" class="form-text"> &dtml-login; </td>
+  </tr>
+
+  <tr>
+    <td align="left" valign="top" class="form-label"> SMTP Server Password </td>
+    <td align="left" valign="top" class="form-text"> &dtml-password; </td>
+  </tr>
+
+  <tr>
+    <td align="left" valign="top" class="form-label"> Spool location </td>
+    <td align="left" valign="top" class="form-text"> &dtml-spool; </td>
+  </tr>
+
+  <tr>
+    <td align="left" valign="top" class="form-label">
+      Spool polling interval
+    </td>
+    <td align="left" valign="top" class="form-text"> &dtml-polling; </td>
+  </tr>
+
+  <tr>
+    <td align="left" valign="top" class="form-label">
+      Maildrop daemon log file
+    </td>
+    <td align="left" valign="top" class="form-text">
+      &dtml-maildrop_log_file;
+    </td>
+  </tr>
+
+  <tr>
+    <td align="left" valign="top" class="form-label"> Debug mode </td>
+    <td align="left" valign="top" class="form-text"> &dtml-debug; </td>
+  </tr>
+
+  <tr>
+    <td align="left" valign="top" class="form-label"> Debug receiver </td>
+    <td align="left" valign="top" class="form-text"> &dtml-debug_receiver; </td>
+  </tr>
+
+  <tr>
+    <td align="left" valign="top" class="form-label">
+      Add Message-Id headers
+    </td>
+    <td align="left" valign="top" class="form-text">
+      &dtml-add_messageid;
+    </td>
+  </tr>
+
+</table>
+
+<dtml-var manage_page_footer>

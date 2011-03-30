@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>MaildropHost Deletion</title>
+  </head>
+
+  <body>
+
+    <table border="1" cellpadding="2">
+
+      <tbody>
+
+        <tr>
+	  <td colspan="3"> MaildropHost Deletion </td>
+	</tr>
+
+        <tr>
+          <td>open</td>
+          <td>/manage_main</td>
+          <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td>assertLocation</td>
+          <td>/manage_main</td>
+          <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td>click</td>
+	  <td>xpath=//input[@value='TestMaildropHost']</td>
+	  <td>&nbsp;</td>
+	</tr>
+
+	<tr>
+	  <td>clickAndWait</td>
+	  <td>name=manage_delObjects:method</td>
+	  <td>&nbsp;</td>
+	</tr>
+
+	<tr>
+	  <td>verifyTextNotPresent</td>
+	  <td>TestMaildropHost</td>
+	  <td>&nbsp;</td>
+	</tr>
+
+      </tbody>
+
+    </table>
+
+  </body>
+
+</html>

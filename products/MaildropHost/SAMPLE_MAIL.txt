@@ -1,0 +1,11 @@
+##To:recipient@some.com
+##From:sender@someother.com
+From: "John A. Doe" <sender@someother.com>
+To: "Jane D. Doe" <recipient@some.com>
+Subject: This is a test message
+
+Body goes here 
+and more lines
+
+yeay!
+

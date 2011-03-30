@@ -1,0 +1,16 @@
+#!/bin/sh
+
+#
+#   TESTING start script to run the maildrop python process
+#
+reldir=`dirname $0`
+
+if [ $reldir = "." ]; then
+    reldir=`pwd`;
+fi
+
+MAILDROPHOME=`dirname $reldir`
+CONFIG="$reldir/config.py"
+. $CONFIG
+
+exec $PYTHON $MAILDROPHOME/maildrop.py "$CONFIG"

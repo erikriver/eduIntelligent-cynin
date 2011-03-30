@@ -1,0 +1,372 @@
+MaildropHost historical change log
+==================================
+
+1.19 (2007/02/14)
+
+  Bugs fixed
+
+    - maildrop.py: Moved a variable assignment to prevent UnboundLocalError
+      exceptions in some edge cases, thanks go to Jeremy Bobbio.
+      (http://www.dataflake.org/tracker/issue_00558)
+
+    - Moved the Message-Id header generation and addition from the 
+      email generation code in the MaildropHost itself to the maildrop
+      daemon. Generating a Message-Id requires a DNS lookup, which can
+      cause a slowdown - so it is better to handle it out of the 
+      context of an ongoing web request.
+      (http://www.dataflake.org/tracker/issue_00534)
+
+
+1.18 (2006/07/08)
+
+  Features added
+
+    - Thanks to patches from Chris Withers, the MaildropHost transactional
+      Email feature now supports ZODB savepoints instead of just
+      transactions and subtransactions.
+      (http://www.dataflake.org/tracker/issue_00505)
+
+
+1.17 (2006/04/29)
+
+  Bugs fixed
+
+    - the maildrop daemon used to read in every mail file in the spool
+      before deciding how many to send (MAILDROP_BATCH setting), which
+      could fill up all memory if the messages are very large and the
+      number of recipients very high. Now we only ever read in files up
+      to the MAILDROP_BATCH setting. (patch by Maik Jablonski)
+
+    - Squashed a deprecation warning in the Email unit tests (patch
+      by Chris Withers)
+
+    - Ensured that unit tests will use their own temporary spool and
+      not the spool set up using the configuration file (patch by
+      Chris Withers)
+
+
+1.16 (2006/03/19)
+
+  Bugs fixed
+
+    - The ADD_MESSAGEID flag was handled incorrectly, leading to message
+      IDs being added regardless of its settings (Thanks to Maik
+      Jablonski for http://www.dataflake.org/tracker/issue_00493)
+
+    - Add a warning to config.py: Turning on message ID generation can
+      seriously slow down message creation since it involves a DNS lookup
+      (http://www.dataflake.org/tracker/issue_00495 by Marc Mare).
+
+
+1.15 (2006/02/22)
+
+  Bugs fixed
+
+    - Change the way the email objects are constructed to avoid
+      problems with a loss of an instance attribute seen before.
+
+    - Document the fact that Windows is not supported for the
+      maildrop daemon script.
+
+
+1.14 (2006/02/08)
+
+  Features added
+
+    - A new configuration option named ADD_MESSAGEID can be used to
+      have the MaildropHost automatically add a Message-Id header
+      (Inspired by http://www.dataflake.org/tracker/issue_00450, 
+      posted by Gael Le Mignot)
+
+    - It is now possible to monitor more than one spool directory
+      with the maildrop daemon. If the configuration option
+      MAILDROP_SPOOL is a semicolon (;)-separated value, the maildrop
+      daemon will monitor all of them. If the config file is read in
+      by the MaildropHost code itself then only the first spool
+      directory will be used.
+
+  Others
+
+    - Some code cleanup/reorganization. Some settings can now be 
+      overridden easier for unittest purposes.
+
+
+1.13 (2005/09/10)
+
+  Bugs fixed
+
+    - A wrong variable name in maildrop.py prevented the maildrop
+      daemon from starting if MAILDROP_LOG_FILE was not set in 
+      config.py
+
+    - The unit tests could not correctly figure out which files in
+      the spool directory were emails and which were unrelated
+      artifacts.
+
+    - To prevent DeprecationWarnings under Zope 2.8 and up, change the
+      way the tests modules initialize Zope for testing 
+      (http://www.dataflake.org/tracker/issue_00467, thanks to
+      Timothy Heap)
+
+    - To prevent ZODB-related deprecation warnings due to the changes
+      in how a transaction is fetched and manipulated in code, more
+      backwards-compatible import changes have been added. The tests 
+      now run on Zope 2.7.x and 2.8.x without warnings.
+
+
+1.12
+
+  Features added
+
+    - A new configuration setting called DEBUG_RECEIVER can be used to
+      set one or more specific envelope receivers which will override the
+      actual recipient(s) without changing any message headers contained
+      in the message body itself. This is useful for testing and debugging
+      scenarios where the tester wants to receive messages in specific
+      mailboxes and eyeball them the way they would appear to the actual
+      receiver.
+
+    - Finally, some unit tests...
+
+    - Thanks to another patch from Gaël at PilotSystems, it is now
+      possible to specifically set the pidfile path and the logfile path.
+      (http://www.dataflake.org/tracker/issue_00427)
+
+  Bugs fixed
+
+    - A logic error in a conditional test could lead to the recipient
+      address being split into single characters. Thanks go to 
+      Simon Michael (http://www.dataflake.org/tracker/issue_00426)
+
+  Other
+
+    - Upon instantiation the transactional mode will now always be 
+      turned on. It is one of the main reasons for using the 
+      software, anyway.
+  
+    - Replace usage of "1" and "0" as fake booleans with True and False
+      in the MaildropHost module.
+
+    - Store the email file path on non-transactional Email objects to aid
+      cleanup in unit tests
+
+    - Reformat code in maindrop.py slghtly
+
+    - Replace some blank try/except statements with specific exceptions
+
+
+1.11
+
+  This release was driven by the good folks at PilotSystems.
+  Gaël Le Mignot sent in a large patch that included a few new useful
+  features.
+
+  Features added
+
+    - A new script to manipulate the maildrop daemon process modeled
+      on apachectl is now included, it is called maildropctl
+
+    - The location of the spool directory and the log/pid-directory can
+      now be specified separately in the configuration if so desired.
+
+    - A new configurable delay between feeding individual emails to the
+      SMTP server has been added. The default is still "no delay" since
+      it is most likely an unusual situation where a mail server really
+      needs a delay to prevent overloading.
+
+
+1.10
+
+  This release changes the way the maildrop daemon process is started.
+  Command-line switches are no longer supported and all configuration
+  is held in config.py. To start the daemon you must pass along the
+  path to your config.py.
+
+  This release was partly financed by Zope Corporation. They paid
+  several hours of development to help make the maildrop daemon
+  easier to use in a managed application environment, expand the docs
+  and set up some testing facilities for maildrop. Thanks ZC!
+
+  Features added
+
+    - The maildrop daemon now supports both TLS (Transport Layer Security)
+      and authenticated SMTP.
+
+    - The maildrop daemon script no longer stays attached to the
+      controlling terminal by default. It detaches correctly unless you
+      set the DEBUG flag inside config.py to 1.
+
+    - Start scripts for RedHat and SuSE are now provided. They work
+      correctly with chkconfig/Yast2 and can be linked into /etc/rc.d 
+      (SuSE) or /etc/rc.d/init.d (RedHat)
+
+    - Added a small "testing harness" to allow creating test emails in 
+      a controlled way that can then be worked on by the maildrop daemon.
+
+  Bugs fixed
+
+    - More small improvements to the start_maildrop and stop_maildrop
+      scripts from Jan-Wijbrand Kolman
+      (http://www.dataflake.org/tracker/issue_00399)
+
+    - Headers that include newlines or line breaks for some strange
+      reason are now cleaned up before formatting the message
+      (http://www.dataflake.org/tracker/issue_00400 by Maik Jablonski)
+
+
+1.9
+
+  Bugs fixed
+
+    - Remove the hardcoded spool location in favor of a configuration
+      inside config.py that can be reached/used by the rest of the
+      code. The spool location is shown in the ZMI, too. Most of the
+      work done by Jan-Wijbrand Kolman - thanks! (JTracker issue 398)
+
+
+1.8
+
+  Bugs fixed
+
+    - Address parsing in the maildrop script could get confused by commas
+      inside an address. A solution as proposed by Maik Jablonski
+      (JTracker issue 386) involves using the rfc822 module.
+
+    - Fatal SMTP server reply codes will now be handled differently by the
+      maildrop.py process: If it is clear a mail will not be deliverable
+      it will be logged and then removed out of the spool. Previously it
+      would remain in the spool and maildrop.py would keep attempting a
+      delivery. Thanks go to Maik Jablonski for the patch (see
+      http://www.dataflake.org/tracker/issue_00388)
+
+
+1.7
+
+  Bugs fixed
+  
+    - MaildropHost dropped all mails at once in a single smtp-connection.
+      Added support for batched mail-sending (only x mails per connection),
+      so MTAs with limited allowed mails per connection won't complain and
+      defer mails anymore (Maik Jablonski).
+    
+    - Fixed missing SMTP_PORT in "send-mail"-part of maildrop.py
+      (Maik Jablonski).
+    
+
+1.6
+
+  As of this release the MaildropHost product is distributed under
+  the terms of the ZPL (Zope Public License) version 2.1, which 
+  brings it in line with the license Zope itself is distributed
+  under and removes some licensing uncertainty.
+
+  Bugs fixed
+
+    - Become more unicode friendly with a simple patch contributed
+      by Chris McDonough.
+
+
+1.5
+
+  Features added
+
+    - A single configuration file named "config.py" is now used to
+      store configuration settings for the maildrop daemon. Some
+      properties are imported by the MaildropHost module in order
+      to make them visible (not changeable) through the web interface,
+      such as what SMTP server is used, what port, what polling
+      interval, etc.
+
+
+1.4
+
+  Bugs fixed
+
+    - Implemented a sortKey method for the TransactionalEmail class
+      to satisfy a new ZODB requirement (JTracker issue 369 by Maik
+      Jablonski)
+
+    - Stop using os.tempnam for creating a temporary file name, it
+      always spews warnings into the log.
+
+
+1.3
+
+  Features added
+
+    - Chris Beaven contributed patches and a start script for the
+      mailer that will make it run on Windows (Tracker issue 262).
+
+
+1.2
+
+  Features added
+
+    - Finally added Zope Help System pages for everything
+
+  Bugs fixed
+
+    - Cleaned out ZMI screens, there were some old references 
+      to the standard MailHost object.
+
+    - Fixed a bug that would prevent sending of mail if
+      the recipient list was already a string.
+
+    - Some code cleanup and adding of comments in the code.
+
+
+1.1
+
+  Bugs fixed
+
+    - Avoid processing of mail messages if the transaction commit
+      is only a subtransaction commit
+
+
+1.0
+
+  Features added
+
+    - MaildropHost objects can now run in transactional mode. 
+      This causes the generated email objects to participate
+      in the transaction machinery and do "the right thing"
+      once it is certain that the transaction invoking the
+      mail call has finished or if it has been aborted.
+
+
+1.0beta3
+
+  Bugs fixed
+
+    - Cleaned out a ton of unneeded imports (fixing a bug in the 
+      process which was lamented in Tracker issue 167)
+   
+    - Corrected licensing terms
+
+
+1.0beta2
+
+  Bugs fixed
+
+    - Option for spool checking interval is now really obeyed.
+
+  Features added
+
+    - More extensive docs
+
+    - Option list simplified
+
+    - added stop script for mail spool checker
+
+    - added sample mail file to demonstrate the file format
+
+
+1.0beta1
+
+    First working code version
+
+
+0.5
+
+    Started putting the files together
+

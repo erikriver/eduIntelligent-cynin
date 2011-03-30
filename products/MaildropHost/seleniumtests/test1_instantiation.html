@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <title>MaildropHost Instantiation</title>
+  </head>
+
+  <body>
+
+    <table border="1" cellpadding="2">
+
+      <tbody>
+
+        <tr>
+	  <td colspan="3"> MaildropHost Instantiation </td>
+	</tr>
+
+        <tr>
+          <td>open</td>
+          <td>/manage_main</td>
+          <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td>assertLocation</td>
+          <td>/manage_main</td>
+          <td>&nbsp;</td>
+        </tr>
+
+	<tr>
+	  <td>selectAndWait</td>
+	  <td>name=:action</td>
+	  <td>Maildrop Host</td>
+	</tr>
+
+	<tr>
+	  <td>type</td>
+	  <td>name=id</td>
+          <td>TestMaildropHost</td>
+	</tr>
+
+	<tr>
+	  <td>type</td>
+	  <td>name=title</td>
+	  <td>MaildropHost Title</gtd>
+	</tr>
+
+	<tr>
+	  <td>clickAndWait</td>
+	  <td>name=submit</td>
+	  <td>&nbsp;</td>
+	</tr>
+
+	<tr>
+	  <td>verifyLocation</td>
+	  <td>/TestMaildropHost/manage_main</td>
+	  <td>&nbsp;</td>
+	</tr>
+
+	<tr>
+	  <td>verifyValue</td>
+	  <td>name=title</td>
+	  <td>MaildropHost Title</td>
+	</tr>
+
+	<tr>
+	  <td>verifyValue</td>
+	  <td>name=transactional</td>
+	  <td>on</td>
+	</td>
+
+      </tbody>
+
+    </table>
+
+  </body>
+
+</html>

@@ -1,0 +1,19 @@
+<dtml-var manage_page_header>
+<dtml-var manage_tabs>
+
+<br/>
+
+<table cellpadding="2" cellspacing="0" width="98%">
+
+  <tr class="section-bar">
+    <td class="form-label"> Log Entries (&dtml-maildrop_log_file;)</td>
+  </tr>
+  <tr>
+    <td class="form-text">
+      <dtml-var getLog html_quote newline_to_br>
+    </td>
+  </tr>
+
+</table>
+
+<dtml-var manage_page_footer>

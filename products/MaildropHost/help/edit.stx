@@ -1,0 +1,17 @@
+Maildrop Host - Edit: Edit Maildrop Host properties
+  
+  Description
+
+    This view allows you edit the Maildrop Host.
+
+ Controls
+
+    'ID' -- The id of the Maildrop Host.
+
+    'Title' -- The title of the Maildrop Host.
+
+    'Transactional Mode' -- Toggle the Zope transaction-aware mode
+
+    'Maildrop Daemon settings' -- The settings shown in this table
+      are read from the file "config.py" in the MaildropHost product
+      directory. They are used by the maildrop daemon.

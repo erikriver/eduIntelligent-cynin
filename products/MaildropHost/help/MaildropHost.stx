@@ -1,0 +1,21 @@
+Maildrop Host: Sends mail asynchronously through an SMTP server.
+  
+  Maildrop Hosts allow you to send mail via the Simple Mail Transfer
+  Protocol (SMTP). Mail delivery is completely decoupled from 
+  message creation and handled by an independent daemon (see the 
+  maildrop subdirectory inside the MaildropHost product folder on the 
+  file system). The MaildropHost is a drop-in replacement for 
+  standard Zope MailHost objects.
+  
+  The asynchronous processing makes sending mail out of Zope scalable 
+  and removes the inevitable wait time for the user if a message is 
+  being sent synchronously, such as with the standard Zope MailHost.
+
+  As another advantage the Maildrop Host can be run in ZODB 
+  transaction-aware mode. This prevents sending of multiple emails if
+  a web request has to be retried due to conflict errors inside Zope
+  and it will not send the email at all if the request encounters an
+  unrecoverable error.
+
+  This object can be used by the <dtml-sendmail> tag to handle
+  delivery of mail, just like the standard MailHost. 

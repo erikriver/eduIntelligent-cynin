@@ -1,0 +1,76 @@
+MaildropHost change log
+=======================
+
+1.22 (2008-08-11)
+-----------------
+
+- Bug: MaildropHost.getLog and the "Maildrop Log" ZMI tab: To avoid
+  problems with addresses enclosed by <> the log contents are now
+  HTML-quoted for display. The maximum display size is limited to
+  about 50 KB to prevent browsers from hanging.
+  (http://www.dataflake.org/tracker/issue_00589 by Giovanni Toffoli)
+
+- Configuration parsing: Replace the import-based configuration
+  parsing with simpler string parsing. Patch by Rob Miller. See
+  INSTALL.tx for additional upgrade notes.
+
+- MaildropHost: Make the 'id' argument to the MaildropHost
+  __init__ method optional to ease GenericSetup compatibility.
+  (http://www.dataflake.org/tracker/issue_00597 by Radim Novotny)
+
+
+1.21 (2007-12-26)
+-----------------
+
+- Bug: MaildropHost.Email: Once the temporary file and lock file are
+  written to disk, save some memory be pruning the email object,
+  following a suggestion from Maik Jablonski.
+  (http://www.dataflake.org/tracker/issue_00587)
+
+- Bug: maildrop.py: make sure the PID-file is removed upon exit or
+  termination, suggested by Johnny Souza.
+  (http://www.dataflake.org/tracker/issue_00579)
+
+- Bug: maildrop.py: prevent an error from gmail by issuing EHLO during 
+  the test connection, filed by Johnny Souza.
+  (http://www.dataflake.org/tracker/issue_00578)
+
+- Bug: maildrop.py: Test for and catch a broken connection when ending the
+  SMTP conversation with the mail server, found by Junyong Pan.
+  (http://www.dataflake.org/tracker/issue_00568)
+
+- Bug: maildropctl: Improve behavior when maildropctl is run and finds
+  an existing PID file. Thanks go to Johnny Souza.
+  (http://www.dataflake.org/tracker/issue_00583)
+
+- Feature: maildrop.py: Add a setting that prevents detaching from the 
+  controlling terminal while running without extra debug output, this
+  allows running the maildrop process under Daemontools. Patch 
+  provided by Michael Dunstan.
+  (http://www.dataflake.org/tracker/issue_00581)
+
+
+1.20 (2007-06-13)
+-----------------
+
+- Feature: MaildropHost: Added a tab in the ZMI to view the maildrop daemon
+  log file contents.
+  (http://www.dataflake.org/tracker/issue_00565)
+
+- Bug: maildrop.py: Since Windows does not support detaching from the
+  controlling terminal the way it is done in maildrop.py, we now 
+  ignore any debug mode setting and force it into debug mode when
+  run on Windows so it does not detach. Thanks to Philip Kilner for 
+  the inspiration.
+
+- Dropped compatibility with Zope versions < 2.8
+
+- Added a DEPENDENCIES.txt document to show package/version 
+  dependencies
+
+
+Previous releases
+-----------------
+
+See HISTORY.txt
+
