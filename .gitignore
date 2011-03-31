@@ -12,7 +12,6 @@
 .svn/
 bin/
 develop-eggs/
-dependent-eggs/
 parts/
 var/
 dist/
