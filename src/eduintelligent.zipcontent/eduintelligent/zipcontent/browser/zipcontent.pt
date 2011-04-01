@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<div metal:fill-slot="main">
+<div metal:fill-slot="content">
     
     <div tal:replace="structure provider:plone.abovecontenttitle" />
 
@@ -25,14 +25,13 @@
                 padding: 3px;
                 margin: 3px;
                 font-weight: bold;" 
-                class="submitButton"
+                class="submitButton integrationbutton"
                 type="submit"
                 name="Submit"
                 value="Iniciar M&oacute;dulo" 
                 tal:attributes="onClick string:javascript:window.open('${context/getUrlContents}/index.html','Title','');"/>
     
-
-    <div tal:replace="structure provider:plone.belowcontentbody" />
+    <p>&nbsp;</p>
      
 </div>
 </body>
