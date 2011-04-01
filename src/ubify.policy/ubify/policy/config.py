@@ -64,6 +64,8 @@ spacesdefaultaddabletypes = ('Blog',
                              'Topic',
                              'Wiki',
                              'SmartView',
+                             'ZipContent',
+                             'SCO',
                              )
 
 spacesdefaultaddablenonfolderishtypes = ('Document',
@@ -76,6 +78,7 @@ spacesdefaultaddablenonfolderishtypes = ('Document',
                                          'Discussion',
                                          'Audio',
                                          'ZipContent',
+                                         'SCO',
                                         )
 
 sitetabs = ({'id':'central',
@@ -128,6 +131,7 @@ PRODUCT_DEPENDENCIES = ('Calendaring',
                         'ATRatings',
                         'ubify.ffxmpp',
                         'eduintelligent.zipcontent',
+                        'eduintelligent.sco',
                         )
 
 UNINSTALL_PRODUCTS = ('PloneSlimbox',

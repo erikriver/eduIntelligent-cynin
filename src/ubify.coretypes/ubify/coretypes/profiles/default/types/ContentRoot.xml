@@ -56,6 +56,7 @@ Mumbai-400064, India
   <element value="Discussion"/>
   <element value="Audio"/>
   <element value="ZipContent"/>
+  <element value="SCO"/>
  </property>
  <property name="default_view">home</property>
  <property name="immediate_view">home</property>

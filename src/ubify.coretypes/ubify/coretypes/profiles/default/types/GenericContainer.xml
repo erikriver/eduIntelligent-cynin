@@ -54,6 +54,8 @@ Mumbai-400064, India
   <element value="Image"/>
   <element value="Link"/>
   <element value="Topic"/>
+  <element value="ZipContent"/>
+  <element value="SCO"/>
  </property>
  <property name="default_view">folder_listing</property>
  <property name="immediate_view">folder_listing</property>
