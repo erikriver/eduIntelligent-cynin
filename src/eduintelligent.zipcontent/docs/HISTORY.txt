@@ -1,0 +1,16 @@
+Changelog
+=========
+
+0.2 - (Unreleased)
+------------------
+
+- Pack this egg as a unit independent of the eduintelligent LCMS as whole.
+Might have some external dependencies tough.
+
+
+
+0.1 - (Released some moons ago)
+-------------------------------
+
+* Initial release
+* Developed entirely by Erik Rivera as a key part of the eduintelligent LCMS.

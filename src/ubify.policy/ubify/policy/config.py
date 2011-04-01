@@ -75,6 +75,7 @@ spacesdefaultaddablenonfolderishtypes = ('Document',
                                          'Video',
                                          'Discussion',
                                          'Audio',
+                                         'ZipContent',
                                         )
 
 sitetabs = ({'id':'central',
@@ -126,6 +127,7 @@ PRODUCT_DEPENDENCIES = ('Calendaring',
                         'Products.OpenXml',
                         'ATRatings',
                         'ubify.ffxmpp',
+                        'eduintelligent.zipcontent',
                         )
 
 UNINSTALL_PRODUCTS = ('PloneSlimbox',
