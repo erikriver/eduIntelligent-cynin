@@ -81,8 +81,6 @@ spacesdefaultaddablenonfolderishtypes = ('Document',
                                          'Audio',
                                          'ZipContent',
                                          'SCO',
-                                         'Exam',
-                                         'Quiz',
                                         )
 
 sitetabs = ({'id':'central',
@@ -113,8 +111,8 @@ sitetabs = ({'id':'central',
 mailhostconfiguration = {'configure':True,
                          'smtphost':'localhost',
                          'smtpport':25,
-                         'fromemailname':'Site Administrator',
-                         'fromemailaddress':'siteadmin@yourdomain.com'
+                         'fromemailname':'Administrador Blufrog',
+                         'fromemailaddress':'info@iservices.com.mx'
                         }
 
 PRODUCT_DEPENDENCIES = ('Calendaring',
@@ -124,6 +122,9 @@ PRODUCT_DEPENDENCIES = ('Calendaring',
                         'CMFNotification',
                         'ZipFileTransport',
                         'Scrawl',
+                        'eduintelligent.zipcontent',
+                        'eduintelligent.sco',
+                        'eduintelligent.evaluation',
                         'ubify.coretypes',
                         'ubify.smartview',
                         'ubify.spaces',
@@ -134,9 +135,6 @@ PRODUCT_DEPENDENCIES = ('Calendaring',
                         'Products.OpenXml',
                         'ATRatings',
                         'ubify.ffxmpp',
-                        'eduintelligent.zipcontent',
-                        'eduintelligent.sco',
-                        'eduintelligent.evaluation'
                         )
 
 UNINSTALL_PRODUCTS = ('PloneSlimbox',
@@ -292,7 +290,7 @@ default_sitehome_smartviews = (
                     {
                         'id':'allblogentries',
                         'title':'All Blog Posts',
-                        'description':'All blog posts of this cyn.in site.',
+                        'description':'All blog posts on Blufrog.',
                         'type': ('Blog Entry',),
                         'limitnumber': False,
                         'itemcount': 10,
@@ -302,7 +300,7 @@ default_sitehome_smartviews = (
                     {
                         'id':'allwikipages',
                         'title':'All Wiki Pages',
-                        'description':'All wiki pages of this cyn.in site.',
+                        'description':'All wiki pages on Blufrog.',
                         'type': ('Wiki Page',),
                         'limitnumber': False,
                         'itemcount': 10,
@@ -312,7 +310,7 @@ default_sitehome_smartviews = (
                     {
                         'id':'allevents',
                         'title':'All Events',
-                        'description':'All events of this cyn.in site.',
+                        'description':'All events on Blufrog.',
                         'type': ('Event',),
                         'limitnumber': False,
                         'itemcount': 10,
@@ -322,7 +320,7 @@ default_sitehome_smartviews = (
                     {
                         'id':'allfiles',
                         'title':'All Files',
-                        'description':'All files of this cyn.in site.',
+                        'description':'All files on Blufrog.',
                         'type': ('File',),
                         'limitnumber': False,
                         'itemcount': 10,
@@ -332,7 +330,7 @@ default_sitehome_smartviews = (
                     {
                         'id':'allimages',
                         'title':'All Images',
-                        'description':'All images of this cyn.in site.',
+                        'description':'All images on Blufrog.',
                         'type': ('Image',),
                         'limitnumber': False,
                         'itemcount': 10,
@@ -342,7 +340,7 @@ default_sitehome_smartviews = (
                     {
                         'id':'alllinks',
                         'title':'All Links',
-                        'description':'All links of this cyn.in site.',
+                        'description':'All links on Blufrog.',
                         'type': ('WebLink',),
                         'limitnumber': False,
                         'itemcount': 10,
@@ -352,7 +350,17 @@ default_sitehome_smartviews = (
                     {
                         'id':'allcomments',
                         'title':'All Comments',
-                        'description':'All comments of this cyn.in site.',
+                        'description':'All comments on Blufrog.',
+                        'type': ('Comment',),
+                        'limitnumber': False,
+                        'itemcount': 10,
+                        'limit':5,
+                        'displaytitle':'Comments',
+                    },
+                    {
+                        'id':'allcourses',
+                        'title':'All Courses',
+                        'description':'All courses on Blufrog.',
                         'type': ('Comment',),
                         'limitnumber': False,
                         'itemcount': 10,
@@ -383,8 +391,8 @@ user_private_space_items = (
                                 'type':'Calendar',
                             },
                             {
-                                'id':'mycheckouts',
-                                'title':'My Checkouts',
+                                'id':'mycourses',
+                                'title':'My Courses',
                                 'type':'GenericContainer',
                             }
 )
@@ -426,20 +434,7 @@ list_of_portletmanagers_for_stackerportlet_assignment = (
                             'plone.rightcolumn',
                           )
 
-cynin_desktop_left_column_text = """
-<table>
-<tbody>
-<tr>
-<td>Get your cyn.in notifications, search and instant discussions, direct to your desktop.</td>
-</tr>
-<tr>
-<td align="center"><a class="nourlicon" href="http://cyn.in/cynin-desktop"><img class="image-inline image-inline" src="/get-cyniin-desktop.png"/></a></td>
-</tr>
-<tr>
-<td>Supports: <img src="/windows_icon.png" /> Windows XP / Vista, <img src="/apple_icon.png" />Mac OS X, <img class="image-inline image-inline" src="/linux_icon.png" /> Linux.</td>
-</tr>
-</tbody>
-</table>        """
+cynin_desktop_left_column_text = """"""
 
 space_defined_applications = (
                                 {

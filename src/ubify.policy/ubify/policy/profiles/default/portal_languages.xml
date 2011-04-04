@@ -38,7 +38,7 @@ Dheeraj Sagar, Malad(W)
 Mumbai-400064, India
 -->
 <object name="portal_languages" meta_type="Plone Language Tool">
- <default_language value="en-us"/> 
+ <default_language value="es"/> 
  <use_request_negotiation value="True"/>
  <use_combined_language_codes value="True" />
  <use_cookie_negotiation value="True"/>
