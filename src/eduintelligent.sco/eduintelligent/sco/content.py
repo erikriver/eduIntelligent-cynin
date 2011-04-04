@@ -28,7 +28,7 @@ from StringIO import StringIO
 #### Standard Zope modules
 from zope.interface import implements
 from zope.component.factory import Factory
-from zope.annotation.interfaces import IAnnotations
+#from zope.annotation.interfaces import IAnnotations
 
 #### Standard Products Plone
 from Products.CMFCore.utils import getToolByName
@@ -41,10 +41,10 @@ from plone.app.content.item import Item
 #### Local modules
 from eduintelligent.sco import scoMessageFactory as _
 from eduintelligent.sco.interfaces import ISCO
-from eduintelligent.sco.config import PROJECTNAME, CONTENT_STORE, EXTERNAL_URL
+from eduintelligent.sco.config import CONTENT_STORE, EXTERNAL_URL
 from eduintelligent.sco import utilities
 from eduintelligent.sco.scorm.imsmanifest import IMSManifest
-from eduintelligent.sco.scorm.scormapi import ScormAPI
+#from eduintelligent.sco.scorm.scormapi import ScormAPI
 from eduintelligent.sco.scorm.track import TrackingStorage
 from eduintelligent.sco.scorm.tracking import timeStamp2ISO
 
@@ -61,16 +61,18 @@ def toInt(num):
 
 def addScormTime(time1, time2):
             
-    hours1,minutes1,secondes1,primes1 = map(toInt, mask.match(time1).groups())
+    hours1, minutes1, secondes1, primes1 = map(toInt, 
+                                               mask.match(time1).groups())
 
-    hours2,minutes2,secondes2,primes2 = map(toInt, mask.match(time2).groups())
+    hours2, minutes2, secondes2, primes2 = map(toInt, 
+                                               mask.match(time2).groups())
     
     # calculate the resulting added hours, secondes, ... for result
 
-    primesReport = False;
-    secondesReport = False;
-    minutesReport = False;
-    hoursReport = False;
+    primesReport = False
+    secondesReport = False
+    minutesReport = False
+    hoursReport = False
 
     #calculate primes
     if primes1 == '':
@@ -80,17 +82,17 @@ def addScormTime(time1, time2):
         
     if primes1 < 10: primes1 = primes1*10
     if primes2 < 10: primes2 = primes2*10
-    total_primes = primes1 + primes2;
+    total_primes = primes1 + primes2
     if total_primes >= 100:
-        total_primes -= 100;
-        primesReport = True;
+        total_primes -= 100
+        primesReport = True
 
     #calculate secondes
     total_secondes = secondes1 + secondes2
     if primesReport: total_secondes += 1
     if total_secondes >= 60:
-        total_secondes -= 60;
-        secondesReport = True;
+        total_secondes -= 60
+        secondesReport = True
 
     #calculate minutes
     total_minutes = minutes1 + minutes2
@@ -107,8 +109,11 @@ def addScormTime(time1, time2):
         hoursReport = True
 
     #construct and return result string
-    total_time = "%02d:%02d:%02d.%02d"%(total_hours, total_minutes,total_secondes,total_primes)
-
+    total_time = "%02d:%02d:%02d.%02d" % (total_hours,
+                                          total_minutes,
+                                          total_secondes,
+                                          total_primes)
+    
     return total_time
 
 
@@ -195,7 +200,8 @@ class SCO(Item):
             
             utilities.createDirectory(specificPath)        
 
-            utilities.unzip().extract(StringIO(str(self.filename.data)),specificPath)
+            utilities.unzip().extract(StringIO(str(self.filename.data)),
+                                      specificPath)
             self.protectDirs()  ### create files to protect the public files
 
         self._v_manifest = None   # invalidate manifest after upload
@@ -227,7 +233,8 @@ class SCO(Item):
     def getReportData(self):
         result = []
         manifest = self.getManifest()
-        # student is the student belonging to studentId or the currently loggend-in user:
+        # student is the student belonging to studentId or 
+        #the currently loggend-in user:
         #student = wbt.getStudent(self.studentId)
         #studentName = student and student.Title() or None
         if manifest:
@@ -294,7 +301,8 @@ class SCO(Item):
     #######################
     scormElements = {
         'cmi.core._children': 'student_id,student_name,lesson_location,credit,'
-                'lesson_status,entry,score,total_time,lesson_mode,exit,session_time',
+                'lesson_status,entry,score,total_time,lesson_mode,exit,'
+                'session_time',
         'cmi.core.score._children': 'raw,min,max',
         #replace with current data:
         'cmi.core.student_name': 'Unknown',
@@ -349,7 +357,8 @@ class SCO(Item):
         
         data['cmi.core.entry'] = 'resume'
         
-        data['cmi.core.total_time'] = addScormTime(data['cmi.core.total_time'], data['cmi.core.session_time'])
+        data['cmi.core.total_time'] = addScormTime(data['cmi.core.total_time'], 
+                                                   data['cmi.core.session_time'])
         
         self.recordTrack(item, 0, studentId, data)
         
@@ -440,7 +449,9 @@ class SCO(Item):
 
     def getLastUserTrack(self, assessmentIdId, runId, userName):
         """ """
-        track = self.track.getLastUserTrack(assessmentIdId, int(runId), userName)
+        track = self.track.getLastUserTrack(assessmentIdId,
+                                            int(runId),
+                                            userName)
         return self.trackToDict(track)
 
     def query(self, criteria):
