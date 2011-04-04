@@ -56,6 +56,8 @@ Mumbai-400064, India
   <element value="Topic"/>
   <element value="ZipContent"/>
   <element value="SCO"/>
+  <element value="Exam"/>
+  <element value="Quiz"/>
  </property>
  <property name="default_view">folder_listing</property>
  <property name="immediate_view">folder_listing</property>

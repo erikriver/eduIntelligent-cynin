@@ -57,6 +57,8 @@ Mumbai-400064, India
   <element value="Audio"/>
   <element value="ZipContent"/>
   <element value="SCO"/>
+  <element value="Exam"/>
+  <element value="Quiz"/>
  </property>
  <property name="default_view">dashboard</property>
  <property name="immediate_view">dashboard</property>

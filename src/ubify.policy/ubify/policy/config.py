@@ -66,6 +66,8 @@ spacesdefaultaddabletypes = ('Blog',
                              'SmartView',
                              'ZipContent',
                              'SCO',
+                             'Exam',
+                             'Quiz',
                              )
 
 spacesdefaultaddablenonfolderishtypes = ('Document',
@@ -79,6 +81,8 @@ spacesdefaultaddablenonfolderishtypes = ('Document',
                                          'Audio',
                                          'ZipContent',
                                          'SCO',
+                                         'Exam',
+                                         'Quiz',
                                         )
 
 sitetabs = ({'id':'central',
@@ -132,6 +136,7 @@ PRODUCT_DEPENDENCIES = ('Calendaring',
                         'ubify.ffxmpp',
                         'eduintelligent.zipcontent',
                         'eduintelligent.sco',
+                        'eduintelligent.evaluation'
                         )
 
 UNINSTALL_PRODUCTS = ('PloneSlimbox',
