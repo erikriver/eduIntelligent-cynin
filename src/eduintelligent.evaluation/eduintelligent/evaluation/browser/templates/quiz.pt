@@ -9,17 +9,17 @@
 <head>                     
     <metal:css fill-slot="css_slot">
         <style type="text/css" media="all"
-                tal:attributes="href: string:${context/++resource++evaluation.css};"></style>
+               tal:attributes="href: string:${context/++resource++evaluation.css};"></style>
     </metal:css>
 
     <metal:js fill-slot="javascript_head_slot">
         <script type="text/javascript"
-        tal:attributes="src context/++resource++evaluation.js"></script>
+        tal:attributes="src string:${context/++resource++evaluation.js};"></script>
     </metal:js>
 </head>
 
 <body>
-<metal:main fill-slot="content">
+<metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main"
                                 tal:define="foo context/initTrack">
 
@@ -28,6 +28,17 @@
 
         <h1 class="documentFirstHeading" tal:content="context/title" />
 
+        <dl id="exam-box"
+            class="portalMessage error"
+            tal:condition="not: context/getNumberUserQuestion">
+            <dt i18n:translate="">
+                Info
+            </dt>
+            <dd>
+                <b i18n:translate="info_no_participate">The Exam has no questions or verify whether the configration is correct</b>
+            </dd>
+        </dl>
+        
         <table class="vertical listing" 
                 tal:define="evaluations context/getDataEvaluations"
                 tal:condition="python:len(evaluations)">
@@ -62,19 +73,21 @@
         <div tal:replace="structure provider:plone.abovecontentbody" />
         
         <a onClick="" class="btn-gray cluetipnoie"
-           title = "Click here to start the exam"
-           tal:attributes="onClick string:javascript:evaluation_viewer('${here_url}/resolve')" 
+           title = "Start the exman just ONE click"
+           tal:attributes="onClick string:javascript:evaluation_viewer('${here_url}/resolve')"
+           tal:condition="python: context.haveTime() and context.getNumberUserQuestion() and canTake"
+           i18n:attributes="title"
            i18n:translate="">Start Quiz </a>
         <a class="whitebutton cluetipnoie"
-           title = "Add questions to this quiz"
+           title = "El alumno selecciona una o varias respuestas de una lista."
            href="createObject?type_name=QuestionChoice"
            tal:attributes="href string:${here_url}/createObject?type_name=QuestionChoice" 
-           i18n:translate=""> [+] Add questions </a>
+           i18n:translate="">[+] Opci&oacute;n m&uacute;ltiple.</a>
         <a class="whitebutton cluetipnoie"
-           title = "View a list of all the questions of this Quiz"
+           title = "Vea una lista con todas las preguntas incluidas en este examen."
            href="folder_contents"
            tal:attributes="href string:${here_url}/folder_contents" 
-           i18n:translate=""> See all questions</a>
+           i18n:translate="">Ver todas las preguntas.</a>
         
         
     </tal:main-macro>

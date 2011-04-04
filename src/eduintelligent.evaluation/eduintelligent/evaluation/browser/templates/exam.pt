@@ -8,12 +8,13 @@
 <head>                     
     <metal:css fill-slot="css_slot">
         <style type="text/css" media="all"
-                tal:content="string: @import url(${context/++resource++evaluation.css});"></style>
+               tal:attributes="href: string:${context/++resource++evaluation.css};">
+        </style>
     </metal:css>
 
     <metal:js fill-slot="javascript_head_slot">
         <script type="text/javascript"
-        tal:attributes="src context/++resource++evaluation.js"></script>
+        tal:attributes="src string:${context/++resource++evaluation.js};"></script>
     </metal:js>
 </head>
     
@@ -22,6 +23,7 @@
                                                           canTake context/canTakeExam">
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
+        <div tal:replace="structure provider:plone.abovecontentbody" />
 
         <h1 class="documentFirstHeading" tal:content="context/title" />
 
@@ -35,7 +37,6 @@
                 <b i18n:translate="info_no_can_take">You cannot take this exam until you take the previous one</b>
             </dd>
         </dl>
-
 
         <dl id="exam-box"
             class="portalMessage info"
@@ -57,19 +58,40 @@
                 <b i18n:translate="info_no_participate">You can no longer participate in this Exam, you can only review your results</b>
             </dd>
         </dl>
-
-
+        
         <dl id="exam-box"
-            class="portalMessage error"
+            class="portalMessage info"
             tal:condition="not: context/getNumberUserQuestion">
             <dt i18n:translate="">
-                Error
+                INFO
             </dt>
             <dd>
-                <b i18n:translate="info_no_participate">The Exam has no questions or verify whether the configration is correct</b>
+                <b i18n:translate="info_no_participate">The Exam has no questions. Please add some.</b>
             </dd>
         </dl>
         
+        <a onClick="" class="btn-gray cluetipnoie"
+           title = "Start the exman just ONE click"
+           tal:attributes="onClick string:javascript:evaluation_viewer('${here_url}/resolve')"
+           tal:condition="python: context.haveTime() and context.getNumberUserQuestion() and canTake"
+           i18n:attributes="title"
+           i18n:translate="">Iniciar Examen</a>
+        <a class="whitebutton cluetipnoie"
+           title = "El alumno escribe su respuesta en un cuadro de texto para su posterior evaluaci&oacute;n por parte del maestro."
+           href="createObject?type_name=QuestionFillIn"
+           tal:attributes="href string:${here_url}/createObject?type_name=QuestionFillIn" 
+           i18n:translate="">[+] Pregunta abierta.</a>
+        <a class="whitebutton cluetipnoie"
+           title = "El alumno selecciona una o varias respuestas de una lista."
+           href="createObject?type_name=QuestionChoice"
+           tal:attributes="href string:${here_url}/createObject?type_name=QuestionChoice" 
+           i18n:translate="">[+] Opci&oacute;n m&uacute;ltiple.</a>
+        <a class="whitebutton cluetipnoie"
+           title = "Vea una lista con todas las preguntas incluidas en este examen."
+           href="folder_contents"
+           tal:attributes="href string:${here_url}/folder_contents" 
+           i18n:translate="">Ver todas las preguntas.</a>
+           
         <div style="display:block; float: right;">
         <table class="vertical listing">
               <tr>
@@ -104,7 +126,7 @@
               
         </table>
         </div>
-        
+           
         <table class="vertical listing" 
                 tal:define="evaluations context/getDataEvaluations"
                 tal:condition="python:len(evaluations)">
@@ -139,22 +161,6 @@
         <div class="documentDescription" tal:content="structure context/description" />        
         
         <div tal:replace="structure provider:plone.abovecontentbody" />
-        
-                
-        <input class="submitButton"
-                          onClick=""
-                          tabindex=""
-                          type="submit"
-                          name="Submit"
-                          value="Start Exam"
-                          tal:attributes="tabindex tabindex/next;
-                                          onClick string:javascript:evaluation_viewer('${here_url}/resolve');" 
-                          tal:condition="python: context.haveTime() and context.getNumberUserQuestion() and canTake"
-                          i18n:attributes="value"/>
-
-        <p class="msgRed" i18n:translate="">Start the exman just ONE click</p>
-                  
-        <div tal:replace="structure provider:plone.belowcontentbody" />
 
     </tal:main-macro>
 </metal:main>
