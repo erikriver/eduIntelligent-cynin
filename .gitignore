@@ -15,3 +15,5 @@ develop-eggs/
 parts/
 var/
 dist/
+downloads/
+eggs/
