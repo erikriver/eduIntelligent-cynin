@@ -79,8 +79,6 @@ spacesdefaultaddablenonfolderishtypes = ('Document',
                                          'Video',
                                          'Discussion',
                                          'Audio',
-                                         'ZipContent',
-                                         'SCO',
                                         )
 
 sitetabs = ({'id':'central',
@@ -290,7 +288,7 @@ default_sitehome_smartviews = (
                     {
                         'id':'allblogentries',
                         'title':'All Blog Posts',
-                        'description':'All blog posts on Blufrog.',
+                        'description':'All blog posts of this cyn.in site.',
                         'type': ('Blog Entry',),
                         'limitnumber': False,
                         'itemcount': 10,
@@ -300,7 +298,7 @@ default_sitehome_smartviews = (
                     {
                         'id':'allwikipages',
                         'title':'All Wiki Pages',
-                        'description':'All wiki pages on Blufrog.',
+                        'description':'All wiki pages of this cyn.in site.',
                         'type': ('Wiki Page',),
                         'limitnumber': False,
                         'itemcount': 10,
@@ -310,7 +308,7 @@ default_sitehome_smartviews = (
                     {
                         'id':'allevents',
                         'title':'All Events',
-                        'description':'All events on Blufrog.',
+                        'description':'All events of this cyn.in site.',
                         'type': ('Event',),
                         'limitnumber': False,
                         'itemcount': 10,
@@ -320,7 +318,7 @@ default_sitehome_smartviews = (
                     {
                         'id':'allfiles',
                         'title':'All Files',
-                        'description':'All files on Blufrog.',
+                        'description':'All files of this cyn.in site.',
                         'type': ('File',),
                         'limitnumber': False,
                         'itemcount': 10,
@@ -330,7 +328,7 @@ default_sitehome_smartviews = (
                     {
                         'id':'allimages',
                         'title':'All Images',
-                        'description':'All images on Blufrog.',
+                        'description':'All images of this cyn.in site.',
                         'type': ('Image',),
                         'limitnumber': False,
                         'itemcount': 10,
@@ -340,7 +338,7 @@ default_sitehome_smartviews = (
                     {
                         'id':'alllinks',
                         'title':'All Links',
-                        'description':'All links on Blufrog.',
+                        'description':'All links of this cyn.in site.',
                         'type': ('WebLink',),
                         'limitnumber': False,
                         'itemcount': 10,
@@ -350,23 +348,13 @@ default_sitehome_smartviews = (
                     {
                         'id':'allcomments',
                         'title':'All Comments',
-                        'description':'All comments on Blufrog.',
+                        'description':'All comments of this cyn.in site.',
                         'type': ('Comment',),
                         'limitnumber': False,
                         'itemcount': 10,
                         'limit':5,
                         'displaytitle':'Comments',
-                    },
-                    {
-                        'id':'allcourses',
-                        'title':'All Courses',
-                        'description':'All courses on Blufrog.',
-                        'type': ('Comment',),
-                        'limitnumber': False,
-                        'itemcount': 10,
-                        'limit':5,
-                        'displaytitle':'Comments',
-                    },
+                    }
                     )
 
 user_private_space_items = (
@@ -391,8 +379,8 @@ user_private_space_items = (
                                 'type':'Calendar',
                             },
                             {
-                                'id':'mycourses',
-                                'title':'My Courses',
+                                'id':'mycheckouts',
+                                'title':'My Checkouts',
                                 'type':'GenericContainer',
                             }
 )
