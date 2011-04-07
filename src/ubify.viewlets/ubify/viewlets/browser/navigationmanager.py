@@ -65,7 +65,20 @@ class NavigationViewlet(ViewletBase):
             
         self.showCollections = self.get_collection_visibility(portal)
         self.showSpaces = self.get_spaces_visibility(portal)
+
+    def get_courses_in_context(self):
+        portal_state = getMultiAdapter((self.context, self.request),name=u'plone_portal_state')
+        portal = portal_state.portal()
+        ct = getattr(portal,'portal_catalog')
+        results = None
+        if ct <> None:
+            query = {}
+            query['portal_type'] = ('Course')
+            query['path'] = {'query': "/".join(self.context.getPhysicalPath()),'depth':1}
             
+            results = ct(**(query))
+        return results
+        
     def get_collection_visibility(self,portal):
         is_visible = False
         viewsid = collection_details['id']
