@@ -98,11 +98,20 @@ class AddNewMenuViewlet(ViewletBase):
             for eachtype in spacesdefaultaddablenonfolderishtypes:
                 object_typeobj = typetool[eachtype]
                 if object_typeobj <> None:
-                    self.addnewitems.append({'id': object_typeobj.id, 'title': object_typeobj.Title(),'description':object_typeobj.Description(),'icon': object_typeobj.content_icon})
+                    self.addnewitems.append({'id': object_typeobj.id, 
+                                             'title': object_typeobj.Title(), 
+                                             'description':object_typeobj.Description(),
+                                             'icon': object_typeobj.content_icon})
             
             self.addnewcontainers = []
-            object_typeobj = typetool['ContentSpace']
-            self.addnewcontainers.append({'id': object_typeobj.id, 'title': object_typeobj.Title(),'description':object_typeobj.Description(),'icon': object_typeobj.content_icon})
+            containers = ['ContentSpace', 'Course']
+            for eachtype in containers:
+                object_typeobj = typetool[eachtype]
+                if object_typeobj <> None:
+                    self.addnewcontainers.append({'id': object_typeobj.id, 
+                                                  'title': object_typeobj.Title(),
+                                                  'description':object_typeobj.Description(),
+                                                  'icon': object_typeobj.content_icon})
             
             self.addnewitems.sort(lambda x,y: cmp(x['title'].lower(),y['title'].lower()))
 

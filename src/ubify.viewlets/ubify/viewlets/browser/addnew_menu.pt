@@ -86,25 +86,8 @@ Mumbai-400064, India
                 </div>
             </tal:items>
         </div>
-        <fieldset class="contentheaderlabel addnewscreenlabel" tal:condition="python:view.viewmenu">
-        <legend i18n:translate="">Saved Search</legend>
-        </fieldset>
-        <div id="addnewcollectionholder" tal:condition="python:view.viewmenu">
-            <tal:items tal:repeat="vmenu view/viewmenu">
-                <div class="addnewactionholder">
-                    <a class="addselector" tal:attributes="href vmenu/absolute_url" tal:define="ttool context/portal_types;
-                                                                tobj python:ttool[vmenu['portal_type']];
-                                                                ticon tobj/content_icon
-                                                                ">
-                        <img border="0"
-                             tal:attributes="src string:${portal_url}/${ticon}"
-                             class="addnewtypeicon">
-                        <span tal:content="vmenu/Title" class="addnewtypetitle"/>
-                        <div tal:content="vmenu/description" class="addnewtypedescription discreet" />
-                    </a>
-                </div>
-            </tal:items>
-        </div>
+
+
         <script type="text/javascript" rel="forceLoad">        
         jq('#comcynapsespaceselector').change(function(event){
             if (jq('#comcynapsespaceselector option:selected').attr('class') != 'disabledspaceselection'){                        
