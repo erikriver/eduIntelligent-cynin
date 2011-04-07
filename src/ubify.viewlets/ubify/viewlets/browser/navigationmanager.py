@@ -74,9 +74,9 @@ class NavigationViewlet(ViewletBase):
         if ct <> None:
             query = {}
             query['portal_type'] = ('Course')
-            query['path'] = {'query': "/".join(self.context.getPhysicalPath()),'depth':1}
-            
+            query['path'] = {'query': "/".join(portal.getPhysicalPath())+'/home','depth':1}
             results = ct(**(query))
+            
         return results
         
     def get_collection_visibility(self,portal):
