@@ -46,7 +46,7 @@ Mumbai-400064, India
                         logout_url python:portal_url + '/logout';
                         site_properties python:portal.portal_properties.site_properties;
                         logout_url python:hasattr(site_properties,'logout_url') and site_properties.logout_url != '' and site_properties.logout_url or logout_url"
-                        tal:condition="not: view/anonymous" i18n:domain="cynin">
+                        tal:condition="python: False" i18n:domain="cynin">
   <div id="comcynapsecyninmyareablock" tal:attributes="class string:kssRefreshViewlet kssattr-messageid-${view/messageuid} kssattr-count-${view/status_comment_count}">
     <div id="statusinputholder">
       <form action="" id="comcynapsecyninstatusmessageinputform">
