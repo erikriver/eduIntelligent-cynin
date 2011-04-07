@@ -112,6 +112,16 @@ class AddNewMenuViewlet(ViewletBase):
                                                   'title': object_typeobj.Title(),
                                                   'description':object_typeobj.Description(),
                                                   'icon': object_typeobj.content_icon})
+            self.contenidoeducativo = []
+            containers = ['Exam', 'Quiz', 'ZipContent', 'SCO']
+            for eachtype in containers:
+                object_typeobj = typetool[eachtype]
+                if object_typeobj <> None:
+                    self.contenidoeducativo.append({'id': object_typeobj.id, 
+                                                  'title': object_typeobj.Title(),
+                                                  'description':object_typeobj.Description(),
+                                                  'icon': object_typeobj.content_icon})       
+            
             
             self.addnewitems.sort(lambda x,y: cmp(x['title'].lower(),y['title'].lower()))
 

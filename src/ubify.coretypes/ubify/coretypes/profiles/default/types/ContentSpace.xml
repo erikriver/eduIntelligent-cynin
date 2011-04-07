@@ -54,8 +54,7 @@ Mumbai-400064, India
   <element value="ContentSpace"/>
   <element value="Video"/>
   <element value="Discussion"/>
-  <element value="Audio"/> 
-  <element value="Course"/>
+  <element value="Audio"/>
  </property>
  <property name="default_view">dashboard</property>
  <property name="immediate_view">dashboard</property>

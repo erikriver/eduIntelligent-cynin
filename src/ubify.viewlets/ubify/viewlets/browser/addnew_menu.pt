@@ -36,7 +36,8 @@ You can also contact Cynapse at:
 Dheeraj Sagar, Malad(W)
 Mumbai-400064, India
 </tal:comment>
-<tal:block tal:define="portal_url here/portal_url;" i18n:domain="cynin">
+<tal:block tal:define="portal_url here/portal_url;"
+           i18n:domain="cynin">
 <h1 id="nyroModalTitle" i18n:translate="lbl_addcontent_title">Add new content</h1>
 <div class="formHelp" i18n:translate="lbl_addcontent_desc">
     To begin adding new content, select the Space in which you would like to add it to, and then click one of the content types below.
@@ -69,13 +70,52 @@ Mumbai-400064, India
                 </div>
             </tal:items>
         </div>
-        <fieldset id="addcontainerlegend" class="contentheaderlabel addnewscreenlabel" tal:attributes="class python:('ContentSpace' in view.contextdisallowedtypes and 'contentheaderlabel addnewscreenlabel hidden') or 'contentheaderlabel addnewscreenlabel'">
+        <fieldset id="addcontainerlegend" class="contentheaderlabel addnewscreenlabel" 
+                  tal:attributes="class python:('ContentSpace' in view.contextdisallowedtypes and 'contentheaderlabel addnewscreenlabel hidden') or 'contentheaderlabel addnewscreenlabel'"
+                  tal:condition="python: not(context.portal_type=='Course')">
             <legend i18n:translate="">Container</legend>
         </fieldset>
-        <div id="addnewspaceholder" tal:attributes="class python:'ContentSpace' in view.contextdisallowedtypes and 'hidden'">
+        <div id="addnewspaceholder" 
+             tal:attributes="class python:'ContentSpace' in view.contextdisallowedtypes and 'hidden'"
+             tal:condition="python: not(context.portal_type=='Course')">
             <tal:items tal:repeat="action view/addnewcontainers">
                 <div tal:attributes="id string:addnewaction-${action/id};" class="addnewactionholder">
-                    <a class="addselector" tal:attributes="rel python:action['id'];href string:${view/contextualurl}/createObject?type_name=${action/id}">
+                    <a class="addselector" 
+                        tal:attributes="rel python:action['id'];href string:${view/contextualurl}/createObject?type_name=${action/id}"
+                        tal:condition="python: not (context.portal_type=='Course') and not(action['id'] == 'Course')">
+                        <img alt="" src=""
+                             tal:condition="action/icon"
+                             tal:attributes="src action/icon; alt action/title;"
+                             class="addnewtypeicon"/>
+                        <span tal:content="action/title" class="addnewtypetitle"/>
+                        <div tal:content="action/description" class="addnewtypedescription discreet" />
+                    </a>
+                    <a class="addselector" 
+                        tal:condition="python: action['id'] == 'Course' and context.portal_type=='ContentRoot'"
+                        tal:attributes="rel python:action['id'];href string:${view/contextualurl}/createObject?type_name=${action/id}">
+                        <img alt="" src=""
+                             tal:condition="action/icon"
+                             tal:attributes="src action/icon; alt action/title;"
+                             class="addnewtypeicon"/>
+                        <span tal:content="action/title" class="addnewtypetitle"/>
+                        <div tal:content="action/description" class="addnewtypedescription discreet" />
+                    </a>
+
+                </div>
+            </tal:items>
+        </div>
+
+
+        <fieldset id="addcontainerlegend" class="contentheaderlabel addnewscreenlabel"
+            tal:condition="python: context.portal_type=='Course'">
+            <legend>Contenido educativo</legend>
+        </fieldset>
+        <div id="addnewspaceholder" 
+             tal:condition="python: context.portal_type=='Course'">
+            <tal:items tal:repeat="action view/contenidoeducativo">
+                <div tal:attributes="id string:addnewaction-${action/id};" class="addnewactionholder">
+                    <a class="addselector" 
+                        tal:attributes="rel python:action['id'];href string:${context/absolute_url}/createObject?type_name=${action/id}">
                         <img alt="" src=""
                              tal:condition="action/icon"
                              tal:attributes="src action/icon; alt action/title;"
@@ -86,8 +126,6 @@ Mumbai-400064, India
                 </div>
             </tal:items>
         </div>
-
-
         <script type="text/javascript" rel="forceLoad">        
         jq('#comcynapsespaceselector').change(function(event){
             if (jq('#comcynapsespaceselector option:selected').attr('class') != 'disabledspaceselection'){                        
