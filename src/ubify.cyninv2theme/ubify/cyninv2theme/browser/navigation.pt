@@ -32,9 +32,10 @@
                                  item_class string:forcelink navTreeLevel1;
                                  isselected python:selectedlink == id;
                                  item_class python:isselected and item_class + ' navTreeCurrentNode' or item_class"
-                     tal:attributes="class string:${item_class} navtip" title="Browse through members of this cyn.in site.">
-                    <a href="#" tal:attributes="href string:${portal_url}/Members/member_search_results"
-                     i18n:translate="nav_people_directory"><img border="0" tal:attributes="src string:${portal_url}/icon-group.png" i18n:name="icon">&nbsp;People Directory</a>
+                     tal:attributes="class string:${item_class} navtip" title="Buscar a compa&ntilde;eros y maestros en el directorio escolar.">
+                    <a href="#" 
+                       tal:attributes="href string:${portal_url}/Members/member_search_results">
+                       <img border="0" tal:attributes="src string:${portal_url}/icon-group.png" >&nbsp;Buscar en el directorio</a>
                 </div>
             </li>
             <tal:block tal:condition="python:root and hasattr(root,'getId') and (root.getId() == modules['ubify.cyninv2theme'].getRootID() or root.portal_type == 'ContentRoot') and len(view.getNavTree()['children']) == 0">

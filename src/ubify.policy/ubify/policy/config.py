@@ -64,11 +64,6 @@ spacesdefaultaddabletypes = ('Blog',
                              'Topic',
                              'Wiki',
                              'SmartView',
-                             'Course',
-                             #'ZipContent',
-                             #'SCO',
-                             #'Exam',
-                             #'Quiz',
                              )
 
 spacesdefaultaddablenonfolderishtypes = ('Document',
