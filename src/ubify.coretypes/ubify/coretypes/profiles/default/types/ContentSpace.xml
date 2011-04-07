@@ -54,11 +54,8 @@ Mumbai-400064, India
   <element value="ContentSpace"/>
   <element value="Video"/>
   <element value="Discussion"/>
-  <element value="Audio"/>
-  <element value="ZipContent"/>
-  <element value="SCO"/>
-  <element value="Exam"/>
-  <element value="Quiz"/>
+  <element value="Audio"/> 
+  <element value="Course"/>
  </property>
  <property name="default_view">dashboard</property>
  <property name="immediate_view">dashboard</property>

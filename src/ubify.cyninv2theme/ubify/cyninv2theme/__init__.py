@@ -665,7 +665,7 @@ def buildOneLevelUpURL(context):
     up_url = parent_url
 
     templateId = getListingTemplateForContextParent(context)
-    if context.portal_type in ('ContentSpace','MemberSpace'):
+    if context.portal_type in ('ContentSpace','MemberSpace' ,'Course'):
         current_perspective = 'app_all'
         req = context.REQUEST
         last = req.physicalPathFromURL(req.getURL())[-1]
@@ -1058,7 +1058,7 @@ def addDiscussion(portal,discussion,tags,context,discussionTitle=''):
 def get_dict_for_default_addabletypes(portal):
     dict_value = {}
     ptypes = getattr(portal,'portal_types')
-    for eachobj in ('ContentSpace','ContentRoot',):
+    for eachobj in ('ContentSpace','ContentRoot'):
         obj = getattr(ptypes,eachobj)
         if obj <> None:
             dict_value[eachobj] = obj.allowed_content_types
@@ -1094,7 +1094,7 @@ def getLocationListForAddContent(portal):
 
     if objRoot <> None:
         query['path'] = {'query': "/".join(objRoot.getPhysicalPath())}
-        query['portal_type'] = ('ContentSpace')
+        query['portal_type'] = ('ContentSpace', 'Course')
         query['sort_on'] = 'sortable_title'
 
         spaces = catalog_tool(**(query))
