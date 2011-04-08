@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="cynin">
+<head>
+    <metal:block metal:fill-slot="head_slot">
+        <tal:rssmacro metal:use-macro="here/rss_macro/macros/rss_macro" />
+    </metal:block>
+</head>
+<body>
+    <div class="homepagefullcontainer" metal:fill-slot="contentwithnopadding">
+        <div id="homeacrossportletholder">
+            <tal:acrossportlet tal:replace="structure provider:ubify.mindmapportletmanager" />
+        </div>
+        <tal:usemacro metal:use-macro="here/macro_coursehome_no_content/macros/no_content" />
+        <div id="homecolumnportletsholder" class="subcolumns">
+            <div class="c62l">
+            <div class="homeleftcolumn" tal:content="structure provider:ubify.homeleftblockportletmanager" />
+            </div>
+            <div class="c38r">
+            <div class="homerightcolumn" tal:content="structure provider:ubify.homecontentportletsmanager" />
+            </div>
+        </div>
+        <tal:macro metal:use-macro="here/belowcontent_macro/macros/space_footer_actions" />
+    </div>
+</body>
+</html>

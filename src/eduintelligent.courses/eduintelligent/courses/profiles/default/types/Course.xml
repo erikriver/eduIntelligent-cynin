@@ -28,28 +28,37 @@
   <element value="Exam"/>
  </property>
  <property name="allow_discussion">True</property>
- <property name="default_view">view</property>
+ <property name="default_view">dashboard</property>
  <property name="view_methods">
   <element value="view"/>
+  <element value="dashboard"/>
  </property>
  <alias from="(Default)" to="(dynamic view)"/>
  <alias from="edit" to="atct_edit"/>
  <alias from="view" to="(selected layout)"/>
- <action title="View" action_id="view" category="object" condition_expr=""
-    url_expr="string:${folder_url}/" visible="True">
-  <permission value="View"/>
- </action>
+ <alias from="sharing" to="@@sharing"/>
+ <alias from="folder_contents" to="@@folder_contents"/>
  <action title="Edit" action_id="edit" category="object" condition_expr=""
     url_expr="string:${object_url}/edit" visible="True">
   <permission value="Modify portal content"/>
+ </action>
+ <action title="References" action_id="references" category="object"
+    condition_expr="object/archetype_tool/has_graphviz"
+    url_expr="string:${object_url}/reference_graph" visible="True">
+  <permission value="Modify portal content"/>
+  <permission value="Review portal content"/>
  </action>
  <action title="Roles" action_id="@@role" category="object" condition_expr=""
     url_expr="string:${object_url}/@@role" visible="True">
   <permission value="Modify portal content"/>
  </action> 
- <action title="Attended Users" action_id="@@attendeduserlist" category="object" condition_expr=""
+ <action title="Roll Call" action_id="@@attendeduserlist" category="object" condition_expr=""
     url_expr="string:${object_url}/@@attendeduserlist" visible="True">
   <permission value="Modify portal content"/>
- </action> 
-
+ </action>
+ <action title="Folder Listing" action_id="folderlisting" category="folder"
+    condition_expr="object/isPrincipiaFolderish"
+    url_expr="string:${folder_url}/view" visible="False">
+  <permission value="View"/>
+ </action>
 </object>

@@ -4,12 +4,13 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
       i18n:domain="cynin">
-    <tal:definemacro metal:define-macro="no_content" tal:define="isauthenticated python: modules['ubify.cyninv2theme'].checkHasPermission('Set own password', here)">
+    <tal:definemacro metal:define-macro="no_content" 
+                     tal:define="isauthenticated python: modules['ubify.cyninv2theme'].checkHasPermission('Set own password', here)">
         <tal:definitions tal:define="totalcount python:modules['ubify.cyninv2theme.portlets.statistics'].getTotalItemCount(context) or 0;"
         tal:condition="isauthenticated">
         <div class="sitehomenocontentcontainer">
             <div class="sitehomenocontent" tal:condition="python:totalcount == 0">
-                <div class="sitehomenocontentheader" >El grupo "<em><tal:title tal:content="context/pretty_title_or_id"/></em>" a&uacute;n no tiene contenido.</div>
+                <div class="sitehomenocontentheader">El curso "<em><tal:title tal:content="context/pretty_title_or_id"/></em>" a&uacute;n no tiene contenido.</div>
                 <div class="addnewbuttonholder">
                     <a href="addcontentselector" class="nyroModalnew">
                         <img src="btn-plus.png" />
@@ -18,14 +19,14 @@
                 </div>
                 
                 <div class="formHelp">Hasta este momento no se ha
-                a&ntilde;adido ning&uacute;n tipo de contenido a este grupo.
+                a&ntilde;adido ning&uacute;n tipo de contenido a este curso.
                 Presione el bot&oacute;n verde con la leyenda "<em>Nuevo</em>"
                 (que siempre est&aacute; disponible en la barra blanca en la
                 cabecera de este sitio Blufrog. Tambi&eacute;n puede presionar
                 el bot&oacute;n que esta a la derecha de este mensaje. Con
                 ambos botones puede crear el contenido que necesita para este
-                grupo.</div>
-            
+                curso.</div>
+                
             </div>
         </div>
         </tal:definitions>

@@ -96,4 +96,13 @@
       permission="zope2.View"
     />
 
+    <!--Integracion con cyn.in-->
+    <include package="ubify.coretypes" />
+    <browser:page
+        for="eduintelligent.courses.content.course.Course"
+        name="dashboard"
+        template="templates/coursehome.pt"
+        class=".course.CourseDashboard"
+        permission="zope2.View"
+        />
 </configure>

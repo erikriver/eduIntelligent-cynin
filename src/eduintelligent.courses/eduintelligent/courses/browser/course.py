@@ -16,6 +16,11 @@ from Products.statusmessages.interfaces import IStatusMessage
 
 from eduintelligent.courses.interfaces import ICourse, IBannerProvider
 
+from ubify.cyninv2theme.browser.cynindashboards import SpaceDashboardView
+class CourseDashboard(SpaceDashboardView):
+    pass
+
+
 class CourseView(BrowserView):
     """Default view of a course
     """    
