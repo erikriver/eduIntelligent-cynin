@@ -30,7 +30,6 @@
  <property name="allow_discussion">True</property>
  <property name="default_view">dashboard</property>
  <property name="view_methods">
-  <element value="view"/>
   <element value="dashboard"/>
  </property>
  <alias from="(Default)" to="(dynamic view)"/>
@@ -38,6 +37,10 @@
  <alias from="view" to="(selected layout)"/>
  <alias from="sharing" to="@@sharing"/>
  <alias from="folder_contents" to="@@folder_contents"/>
+  <action title="View" action_id="view" category="object" condition_expr=""
+    url_expr="string:${object_url}" visible="True">
+  <permission value="View"/>
+ </action>
  <action title="Edit" action_id="edit" category="object" condition_expr=""
     url_expr="string:${object_url}/edit" visible="True">
   <permission value="Modify portal content"/>
