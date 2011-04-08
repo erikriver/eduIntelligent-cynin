@@ -2934,7 +2934,7 @@ msgstr "Comentarios recientes"
 #. Default: "Recent Items"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/portlets/recentsiteupdatesportlet.pt:42
 msgid "header_recent_items"
-msgstr "Artículos Recientes"
+msgstr "Elementos Recientes"
 
 #. Default: "Recently Active Wiki Pages"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/app_wiki.pt:98
@@ -5431,7 +5431,7 @@ msgstr "Utilice valores de la"
 #. Default: ": Liked by ${positive_count}"
 #: ATRatings/skins/at_ratings/rating_macros.pt:166
 msgid "positivecount"
-msgstr ": Le gustó a ${positive_count}"
+msgstr ": Le gustó a ${positive_count} personas"
 
 #. Default: "Posted by"
 #: Scrawl/skins/scrawl_30/blog_view.pt:125
