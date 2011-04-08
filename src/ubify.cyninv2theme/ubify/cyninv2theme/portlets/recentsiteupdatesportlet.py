@@ -110,6 +110,8 @@ class Renderer(base.Renderer):
         self.anonymous = portal_state.anonymous()
         self.portal_url = portal_state.portal_url()
         self.typesToShow = spacesdefaultaddablenonfolderishtypes + ('StatuslogItem',)
+        if self.context.portal_type == 'Course':
+            self.typesToShow = self.typesToShow + ('Exam','Quiz','SCO','ZipContent')
         self.plone_view = getMultiAdapter((self.context, self.request),name='plone')
         self.title = "Recent Updates"
         self.limit_display = self.data.count

@@ -103,7 +103,6 @@ Mumbai-400064, India
                                                 item_end item/end/ISO|item/EndDate|nothing;
                                                 portal_url here/portal_url;
                                                 full_item python:item.getObject();
-                                                comment_count python:here.getcommentcount(full_item);
                                                 item_index repeat/item/index;
                                                 item_uid item/UID | nothing;
                                                 ">

@@ -43,6 +43,8 @@ Mumbai-400064, India
     <div id="siteupdatesportlet">
         <ul class="vertical-tabs">
             <li class="verticaltab all"><a href="#siteupdatesportlet-fragment-1" i18n:translate="tab_all">All</a></li>
+            <li class="verticaltab educativos"><a href="#siteupdatesportlet-fragment-12" tal:condition="python: context.portal_type == 'Course'">Educativos</a></li>
+            <li class="verticaltab examenes"><a href="#siteupdatesportlet-fragment-13" tal:condition="python: context.portal_type == 'Course'">Examenes</a></li>
             <li class="verticaltab audio"><a href="#siteupdatesportlet-fragment-10" i18n:translate="tab_audios">Audio</a></li>
             <li class="verticaltab blog"><a href="#siteupdatesportlet-fragment-4" i18n:translate="tab_blog">Blog</a></li>
             <li class="verticaltab links"><a href="#siteupdatesportlet-fragment-7" i18n:translate="tab_links">Bookmarks</a></li>
@@ -164,12 +166,36 @@ Mumbai-400064, India
                 </div>
             </tal:block>
         </div>
-        <div id="siteupdatesportlet-fragment-11" class="vertical-tabs-panel" tal:condition="view/showmessages" style="display:none;">
+        <div id="siteupdatesportlet-fragment-11" class="vertical-tabs-panel" style="display:none;" tal:condition="view/showmessages">
             <tal:block tal:define="folderContents python:view.results('StatuslogItem')">
                 <div metal:use-macro="context/recentupdate_macro/macros/listing"/>
                 <div class="morelinkrow">
                     <a class="recentportletxmore smallwhitebutton" href="#" tal:define="morecount python:view.resultscount('StatuslogItem')" tal:condition="python:morecount > 0"
                         tal:attributes="href string:${current_url}/app_statuslog" i18n:translate="link_more">
+                        <span tal:content="morecount" i18n:name="morecount"></span> More &raquo;
+                    </a>
+                </div>
+            </tal:block>
+        </div>
+        <div id="siteupdatesportlet-fragment-12" class="vertical-tabs-panel" style="display:none;" tal:condition="python: context.portal_type == 'Course'">
+            <tal:block tal:define="folderContents python:view.results(('ZipContent','SCO'))">
+                <div metal:use-macro="context/recentupdate_macro/macros/listing"/>
+                <div class="morelinkrow">
+                    <a class="recentportletxmore smallwhitebutton" href="#" 
+                        tal:define="morecount python:view.resultscount(('ZipContent','SCO'))" 
+                        tal:condition="python:morecount > 0"
+                        tal:attributes="href string:${current_url}/folder_contents" i18n:translate="link_more">
+                        <span tal:content="morecount" i18n:name="morecount"></span> More &raquo;
+                    </a>
+                </div>
+            </tal:block>
+        </div>
+        <div id="siteupdatesportlet-fragment-13" class="vertical-tabs-panel" style="display:none;" tal:condition="python: context.portal_type == 'Course'">
+            <tal:block tal:define="folderContents python:view.results(('Exam','Quiz'))">
+                <div metal:use-macro="context/recentupdate_macro/macros/listing"/>
+                <div class="morelinkrow">
+                    <a class="recentportletxmore smallwhitebutton" href="#" tal:define="morecount python:view.resultscount(('Exam','Quiz'))" tal:condition="python:morecount > 0"
+                        tal:attributes="href string:${current_url}/folder_contents" i18n:translate="link_more">
                         <span tal:content="morecount" i18n:name="morecount"></span> More &raquo;
                     </a>
                 </div>

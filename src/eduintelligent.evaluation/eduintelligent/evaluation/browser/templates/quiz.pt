@@ -75,7 +75,7 @@
         <a onClick="" class="btn-gray cluetipnoie"
            title = "Start the exman just ONE click"
            tal:attributes="onClick string:javascript:evaluation_viewer('${here_url}/resolve')"
-           tal:condition="python: context.haveTime() and context.getNumberUserQuestion() and canTake"
+           tal:condition="python:True"
            i18n:attributes="title"
            i18n:translate="">Start Quiz </a>
         <a class="whitebutton cluetipnoie"
