@@ -244,31 +244,31 @@ def getContentItemsCount(context,path=None):
     lstinfo = []
 
     totalwikipages = getTotalCountForQuery(context,path,{'portal_type':'Document'})
-    lstinfo.append({'id':'Wiki Pages','count':totalwikipages})
+    lstinfo.append({'id':'Paginas Wiki','count':totalwikipages})
 
     totalblogentries = getTotalCountForQuery(context,path,{'portal_type':'Blog Entry'})
-    lstinfo.append({'id':'Blog Entries','count':totalblogentries})
+    lstinfo.append({'id':'Bitacoras','count':totalblogentries})
 
     totalfiles = getTotalCountForQuery(context,path,{'portal_type':'File'})
-    lstinfo.append({'id':'Files','count':totalfiles})
+    lstinfo.append({'id':'Archivos','count':totalfiles})
 
     totalimages = getTotalCountForQuery(context,path,{'portal_type':'Image'})
-    lstinfo.append({'id':'Images','count':totalimages})
+    lstinfo.append({'id':'Imagenes','count':totalimages})
 
     totallinks = getTotalCountForQuery(context,path,{'portal_type':'Link'})
-    lstinfo.append({'id':'WebLinks','count':totallinks})
+    lstinfo.append({'id':'Favoritos','count':totallinks})
 
     totalstatusmessages = getTotalCountForQuery(context,path,{'portal_type':'StatuslogItem'})
-    lstinfo.append({'id':'Status Messages','count':totalstatusmessages})
+    lstinfo.append({'id':'Que haces?','count':totalstatusmessages})
 
     totalvideos = getTotalCountForQuery(context,path,{'portal_type':'Video'})
     lstinfo.append({'id':'Videos','count':totalvideos})
 
     totalevents = getTotalCountForQuery(context,path,{'portal_type':'Event'})
-    lstinfo.append({'id':'Events','count':totalevents})
+    lstinfo.append({'id':'Eventos','count':totalevents})
 
     totaldiscussions = getTotalCountForQuery(context,path,{'portal_type':'Discussion'})
-    lstinfo.append({'id':'Discussions','count':totaldiscussions})
+    lstinfo.append({'id':'Debates','count':totaldiscussions})
 
     totalaudios = getTotalCountForQuery(context,path,{'portal_type':'Audio'})
     lstinfo.append({'id':'Audios','count':totalaudios})

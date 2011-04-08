@@ -31,7 +31,7 @@ msgstr "${items} no puede suprimirse."
 
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/browser/selectdefaultwikipage.pt:152
 msgid "${lastaction} on ${time} by ${author}"
-msgstr "${lastaction} en ${time} por ${author}"
+msgstr "${lastaction} por ${author} a las ${time} "
 
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/browser/userinfo.pt:121
 msgid "${lbl_recententry} More"
@@ -48,7 +48,7 @@ msgstr "${title} está bloqueado y no puede ser eliminado."
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/browser/userinfo.pt:87
 #: ../../../../ubify.ffxmpp/ubify/ffxmpp/browser/sidepanel_conversation_ff.pt:77
 msgid "${userid} has not set a status message yet."
-msgstr "${userid} no ha fijado un mensaje de estado todavía."
+msgstr "${userid} no ha escrito su mensaje de estado aún."
 
 #. Default: "%d days"
 msgid "%d days"
@@ -350,7 +350,7 @@ msgstr "Audio"
 
 #. Default: "Audio Library"
 msgid "Audio Library"
-msgstr "Audio Library"
+msgstr "Audioteca"
 
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/__init__.py:715
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/syndicationinfo.pt:54
@@ -391,11 +391,11 @@ msgstr "Agregar a favoritos"
 
 #. Default: "Bookmark Directory"
 msgid "Bookmark Directory"
-msgstr "Agregar a favoritos Directorio"
+msgstr "Directorio de favoritos"
 
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/author.cpt:297
 msgid "Bookmarks"
-msgstr "Marcadores"
+msgstr "Favoritos"
 
 #: ../../../../ubify.policy/ubify/policy/profiles/default/controlpanel.xml
 msgid "Calendar"
@@ -588,7 +588,7 @@ msgstr "No permitido para pegar el tema (s)."
 
 #: ../../../../ubify.coretypes/ubify/coretypes/profiles/default/types/Discussion.xml
 msgid "Discussion"
-msgstr "Discusión"
+msgstr "Debate"
 
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/__init__.py:713
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/author.cpt:298
@@ -598,11 +598,11 @@ msgstr "Debates"
 
 #. Default: "Discussions Board"
 msgid "Discussions Board"
-msgstr "Debates de la Junta"
+msgstr "Mesa de debates"
 
 #: ../../../../ubify.viewlets/ubify/viewlets/browser/adddiscussion.pt:74
 msgid "Discussions are not allowed in this Space."
-msgstr "Las discusiones no se permiten en este espacio."
+msgstr "Las debates no se permiten en este lugar."
 
 #: ZipFileTransport/browser/zipfiletransportprefs.py:48
 msgid "Document Type"
@@ -1552,7 +1552,7 @@ msgstr "Estadísticas"
 
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/author.cpt:548
 msgid "Status Log"
-msgstr "Situación del Registro"
+msgstr "¿Qué haces?"
 
 #: ../../../../ubify.coretypes/ubify/coretypes/profiles/default/types/StatuslogItem.xml
 msgid "Status Message"
@@ -1564,11 +1564,11 @@ msgstr "Flujo de trabajo el tema Statuslog"
 
 #: ../../../../ubify.coretypes/ubify/coretypes/profiles/default/types/Audio.xml
 msgid "Streamable MP3 audio file"
-msgstr "Streamable archivo de audio MP3"
+msgstr "Archivo de audio en formato MP3"
 
 #: ../../../../ubify.coretypes/ubify/coretypes/profiles/default/types/Video.xml
 msgid "Streamable MP4/FLV video file"
-msgstr "Streamable MP4/FLV archivo de vídeo"
+msgstr "Archivo de vídeo en formato MP4/FLV "
 
 #: ../../../../ubify.coretypes/ubify/coretypes/profiles/default/types/Topic.xml
 msgid "Subfolders"
@@ -1874,12 +1874,12 @@ msgstr "alrededor de una hora"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/__init__.py:694
 #: ../../../../ubify.policy/ubify/policy/profiles/default/actions.xml
 msgid "activity_stream"
-msgstr "Actividad Stream"
+msgstr "Actividad reciente"
 
 #. Default: "Additional Settings"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/__init__.py:1185
 msgid "additional_settings"
-msgstr ""
+msgstr "Ajustes adicionales"
 
 #. Default: "New"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/macro_sitehome_no_content.pt:17
@@ -1904,7 +1904,7 @@ msgstr "am"
 #: ../../../../ubify.coretypes/ubify/coretypes/config.py:121
 #: ../../../../ubify.viewlets/ubify/viewlets/browser/ApplicationsMenuViewlet.pt:67
 msgid "application_views"
-msgstr "Aplicación de puntos de vista"
+msgstr "Ver como ..."
 
 #. Default: "All fields"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/atct_manageTopicIndex.cpt:79
@@ -2332,7 +2332,7 @@ msgstr "sitio cyn.in"
 #: ../../../../ubify.policy/ubify/policy/profiles/default/actions.xml
 #: ../../../../ubify.viewlets/ubify/viewlets/browser/ApplicationsMenuViewlet.pt:53
 msgid "dashboard"
-msgstr "Dashboard"
+msgstr "Resúmen"
 
 #. Default: "&ndash; or &ndash;"
 #: ../../../../ubify.viewlets/ubify/viewlets/browser/adddiscussion.pt:47
@@ -2693,7 +2693,7 @@ msgstr "descriptionwebdav"
 #. Default: "This item was locked by ${author} ${time} ago."
 #: ../../../../ubify.viewlets/ubify/viewlets/browser/lockinfo.pt:19
 msgid "description_webdav_locked_by_author_on_time"
-msgstr "Este tema fue bloqueado por ${time} ${author} ago."
+msgstr "Este tema fue bloqueado por ${author} hace ${time}."
 
 #. ${unlock_button} the object. You will then be able to edit it."
 #. Default: "If you are certain that ${user} has abandoned the object, you may ${unlock_button} the object. You will then be able to edit it."
@@ -2705,7 +2705,7 @@ msgstr "descriptionwebdavlockedsteal"
 #. Default: "Custom workflow policy which maps content types to workflows."
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/prefs_workflow_policy_mapping.pt:56
 msgid "description_workflow_custom_mapping"
-msgstr "La política de flujo de trabajo personalizado que los mapas de tipos de contenido a los flujos de trabajo."
+msgstr "La política de flujo de trabajo personalizada define el flijo de trabajo para cada tipo de contenido."
 
 #. and below."
 #. Default: "Set your workflow policies' local configuration for this folder and below."
@@ -2733,7 +2733,7 @@ msgstr "haga clic aquí"
 #: ../../../../ubify.viewlets/ubify/viewlets/browser/custommethods.py:269
 #: ATRatings/skins/at_ratings/rating_macros.pt:242
 msgid "didnt_like_it"
-msgstr "Disgusta (-1)"
+msgstr "No me gustó (-1)"
 
 #. Default: "Unable to add discussion. Please try again later."
 msgid "discussion_add_error"
@@ -2805,7 +2805,7 @@ msgstr "a partir de ahora"
 #. Default: "Generic Views"
 #: ../../../../ubify.coretypes/ubify/coretypes/config.py:97
 msgid "generic_views"
-msgstr "Vistas genéricos"
+msgstr "Vistas genéricas"
 
 #. Default: "Hate it (-2)"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/__init__.py:721
@@ -3354,7 +3354,7 @@ msgstr "Mínimo 5 caracteres."
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/personalize_form.cpt:221
 #, fuzzy
 msgid "help_portrait"
-msgstr "helpportrait"
+msgstr "Para añadir o cambiar su foto de perfil haga click en el botón \"Abrir\" y seleccione la foto desde su disco duro. El tamaño recomendado de la foto es de 40 pixeles de alto y 40 pixeles de ancho."
 
 #. Default: "Your preferred language."
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/personalize_form.cpt:480
@@ -4462,7 +4462,7 @@ msgstr "Tema"
 #. Default: "Subscribe by Email"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/belowcontent_macro.pt:247
 msgid "label_subscribe_email"
-msgstr "Suscribirse por email"
+msgstr "Envíarme notificaciones por email"
 
 #. Default: "Tags:"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/belowcontent_macro.pt:80
@@ -4608,7 +4608,7 @@ msgstr "workflowed"
 #: ../../../../ubify.viewlets/ubify/viewlets/browser/addnew_menu.pt:41
 #, fuzzy
 msgid "lbl_addcontent_desc"
-msgstr "lbladdcontentdesc"
+msgstr "Haga click sobre el contenido o contenedor que quiera añadir."
 
 #. Default: "Add new content"
 #: ../../../../ubify.viewlets/ubify/viewlets/browser/addnew_menu.pt:40
@@ -4771,7 +4771,7 @@ msgstr "licenseinfo"
 #: ../../../../ubify.viewlets/ubify/viewlets/browser/custommethods.py:273
 #: ATRatings/skins/at_ratings/rating_macros.pt:239
 msgid "liked_it"
-msgstr "Like it (+1)"
+msgstr "Me gustó (+1)"
 
 #. Default: "Cyn.in license"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/helpblock_macro.pt:14
@@ -5113,13 +5113,13 @@ msgstr "Administrar portlets"
 #. Default: "Manage Space"
 #: ../../../../ubify.viewlets/ubify/viewlets/browser/ApplicationsMenuViewlet.pt:98
 msgid "manage_space"
-msgstr "Manage Space"
+msgstr "Administración"
 
 #. Default: "Audio Library"
 #: ../../../../ubify.coretypes/ubify/coretypes/config.py:129
 #: ../../../../ubify.policy/ubify/policy/profiles/default/actions.xml
 msgid "menu_audios"
-msgstr "Audio Library"
+msgstr "Audioteca"
 
 #. Default: "Blog"
 #: ../../../../ubify.coretypes/ubify/coretypes/config.py:137
@@ -5137,9 +5137,7 @@ msgstr "Calendario de eventos"
 #: ../../../../ubify.coretypes/ubify/coretypes/config.py:153
 #: ../../../../ubify.policy/ubify/policy/profiles/default/actions.xml
 msgid "menu_discussions"
-msgstr "Debates de la Junta"
-
-#. Default: "File Repository"
+msgstr "Mesa de debate"
 #: ../../../../ubify.coretypes/ubify/coretypes/config.py:169
 #: ../../../../ubify.policy/ubify/policy/profiles/default/actions.xml
 msgid "menu_files"
@@ -5161,7 +5159,7 @@ msgstr "Agregar a favoritos Directorio"
 #: ../../../../ubify.coretypes/ubify/coretypes/config.py:185
 #: ../../../../ubify.policy/ubify/policy/profiles/default/actions.xml
 msgid "menu_status_log"
-msgstr "Situación del Registro"
+msgstr "¿Qué haces?"
 
 #. Default: "Video Library"
 #: ../../../../ubify.coretypes/ubify/coretypes/config.py:193
@@ -5433,7 +5431,7 @@ msgstr "Utilice valores de la"
 #. Default: ": Liked by ${positive_count}"
 #: ATRatings/skins/at_ratings/rating_macros.pt:166
 msgid "positivecount"
-msgstr ": Gustado a ${positive_count}"
+msgstr ": Le gustó a ${positive_count}"
 
 #. Default: "Posted by"
 #: Scrawl/skins/scrawl_30/blog_view.pt:125
@@ -5642,22 +5640,22 @@ msgstr "Flujo de trabajo para la asignación de tipos de contenido."
 #. Default: "Live feed for Audios across this cyn.in site."
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/syndicationinfo.pt:55
 msgid "syndication_audios"
-msgstr "Audios en vivo para la alimentación a través de este sitio cyn.in."
+msgstr "Sindicación en vivo de todos los Audios en Blufrog."
 
 #. Default: "Live feed for Blog posts across this cyn.in site."
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/syndicationinfo.pt:71
 msgid "syndication_blog_posts"
-msgstr "Feed en vivo para las entradas del blog a través de este sitio cyn.in."
+msgstr "Sindicación en vivo de todos las bitácoras (blog) en Blufrog."
 
 #. Default: "Live feed for Discussions across this cyn.in site."
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/syndicationinfo.pt:101
 msgid "syndication_discussions"
-msgstr "Feed en vivo para conversaciones a través de este sitio cyn.in."
+msgstr "Sindicación en vivo de todos las conversaciones en Blufrog."
 
 #. Default: "Live feed for Events across this cyn.in site."
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/syndicationinfo.pt:117
 msgid "syndication_events"
-msgstr "Feed en vivo para eventos a través de este sitio cyn.in."
+msgstr "Sindicación en vivo de todos los eventos en Blufrog."
 
 #. as enclosures in this feed, for use in podcast clients."
 #. Default: "Live feed for files across this cyn.in site. Files are included as enclosures in this feed, for use in podcast clients."
@@ -5676,7 +5674,7 @@ msgstr "syndicationimages"
 #. Default: "Live feed for Status Logs across this cyn.in site."
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/syndicationinfo.pt:213
 msgid "syndication_statuslog"
-msgstr "Piensos para el Estado de Registros en vivo a través de este sitio cyn.in."
+msgstr "Sindicación en vivo de todos los estatus de usuario en Blufrog."
 
 #. as enclosures in this feed, for use in podcast clients."
 #. Default: "Live feed for videos across this cyn.in site. Videos are included as enclosures in this feed, for use in podcast clients."
@@ -5688,12 +5686,12 @@ msgstr "syndicationvideos"
 #. Default: "Live feed for Web Links across this cyn.in site."
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/syndicationinfo.pt:181
 msgid "syndication_weblinks"
-msgstr "Alimentación de fase de Enlaces Web a través de este sitio cyn.in."
+msgstr "Sindicación en vivo de todos los Favoritos en Blufrog."
 
 #. Default: "Live feed for Wiki Pages across this cyn.in site."
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/syndicationinfo.pt:197
 msgid "syndication_wiki"
-msgstr "Piensos vida de las páginas Wiki a través de este sitio cyn.in."
+msgstr "Sindicación en vivo de todos los Wikis en Blufrog."
 
 #. Default: "All"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/portlets/recentsiteupdatesportlet.pt:45
@@ -5748,12 +5746,12 @@ msgstr "Imágenes"
 #. Default: "Bookmarks"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/portlets/recentsiteupdatesportlet.pt:48
 msgid "tab_links"
-msgstr "Marcadores"
+msgstr "Favoritos"
 
 #. Default: "Statuses"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/portlets/recentsiteupdatesportlet.pt:53
 msgid "tab_status_log"
-msgstr "Estatutos"
+msgstr "¿Qué haces?"
 
 #. Default: "Video"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/portlets/recentsiteupdatesportlet.pt:54
@@ -5809,7 +5807,7 @@ msgstr "Filtro: Listado"
 #. lost."
 #. Default: "Your form has not been saved. All changes you have made will be lost."
 msgid "text_form_modified_message"
-msgstr ""
+msgstr "Aún no se han guardado los cambios del formulario. Si continúa, los cambios se perderán."
 
 #. submit this form again?"
 #. Default: "You already clicked the submit button. Do you really want to submit this form again?"
@@ -5825,22 +5823,22 @@ msgstr ""
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/links_listing.pt:162
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/recentupdate_macro.pt:65
 msgid "text_last_action"
-msgstr ""
+msgstr "Fue ${lastchangeaction} por ${userlink} a las ${created}"
 
 #. Default: "Last ${lastchangeaction} by ${user}"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/files_listing.pt:161
 msgid "text_last_action_files"
-msgstr ""
+msgstr "Fue ${lastchangeaction} por ${user}"
 
 #. Default: "Last ${lastchangeaction} by ${userlink}"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/all_listing.pt:137
 msgid "text_last_action_list"
-msgstr ""
+msgstr "Fue ${lastchangeaction} por ${userlink}"
 
 #. Default: "Are you sure you want to log out?"
 #: ../../../../ubify.viewlets/ubify/viewlets/browser/myareablock.pt:74
 msgid "text_log_out_sure"
-msgstr ""
+msgstr "¿Desea salir de Blufrog?"
 
 #. | ${versiondownloadlink}<br />"
 #. Default: "New Version available! v${versionstring} — ${versionchangelog} | ${versiondownloadlink}<br />"
@@ -5851,7 +5849,7 @@ msgstr ""
 #. Default: "No albums or photos uploaded yet."
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/atct_album_view.pt:111
 msgid "text_no_albums_uploaded"
-msgstr ""
+msgstr "Nadie ha subido álbumes ni fotos aún."
 
 #. contact forms."
 #. Default: "This site doesn't have a valid email setup, so you cannot use any contact forms."
@@ -5871,50 +5869,50 @@ msgstr ""
 #. Default: "Mail control panel"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/plone_control_panel.pt:81
 msgid "text_no_mailhost_configured_control_panel_link"
-msgstr ""
+msgstr "Configuración de correo"
 
 #. work."
 #. Default: "Warning: PIL is not installed properly, image scaling will not work."
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/plone_control_panel.pt:95
 msgid "text_no_pil_installed"
-msgstr ""
+msgstr "Cuidado: La librería PIL no se ha instalado correctamente. El ajuste automático de imágenes fallará."
 
 #. Default: "There are no recent updates."
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/recentupdate_macro.pt:116
 msgid "text_no_recent_updates"
-msgstr ""
+msgstr "No hay nada nuevo."
 
 #. Default: "Enter a group or user name to search for or click 'Show All'."
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/prefs_group_members.cpt:319
 msgid "text_no_searchstring"
-msgstr ""
+msgstr "Escriba el nombre de la persona que busca, o presione el botón 'Mostrar Todos'"
 
 #. Default: "Enter a group or user name to search for."
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/prefs_group_members.cpt:316
 msgid "text_no_searchstring_large"
-msgstr ""
+msgstr "Escriba el nombre de un grupo o una persona para buscarla"
 
 #. Default: "No user by that name."
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/author.cpt:118
 msgid "text_no_user_by_name"
-msgstr ""
+msgstr "Nadie tiene ese nombre."
 
 #. Default: "Enter a username to search for"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/prefs_users_overview.cpt:251
 msgid "text_no_user_searchstring"
-msgstr ""
+msgstr "Escriba un nombre de la persona que busca"
 
 #. Default: "Enter a username to search for, or click 'Show All'"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/prefs_users_overview.cpt:257
 msgid "text_no_user_searchstring_largesite"
-msgstr ""
+msgstr "Escriba el nombre de la persona que busca, o presione el botón 'Mostrar Todos'"
 
 #. Default: "No matches"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/prefs_group_members.cpt:313
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/prefs_groups_overview.cpt:248
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/prefs_search_macros.pt:111
 msgid "text_nomatches"
-msgstr ""
+msgstr "No hay coincidencias"
 
 #. Default: "Powered by ${powered_by_url}&trade; v${version} ${edition}"
 #: ../../../../ubify.viewlets/ubify/viewlets/browser/ubifycolophon.pt:57
@@ -5924,12 +5922,12 @@ msgstr ""
 #. Default: "Supported web browsers - ${url}"
 #: ../../../../ubify.viewlets/ubify/viewlets/browser/ubifycolophon.pt:53
 msgid "text_supported_web_browsers"
-msgstr ""
+msgstr "Navegadores web soportados - ${url}"
 
 #. Default: "This user does not belong to any group."
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/prefs_user_memberships.pt:120
 msgid "text_user_not_in_any_group"
-msgstr ""
+msgstr "Esta persona no pertenece a ningún grupo."
 
 #. Default: "expired"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/browser/cynintable.pt:96
@@ -6081,7 +6079,7 @@ msgstr ""
 #. Default: "Workflow policy"
 #: ../../../../ubify.viewlets/ubify/viewlets/browser/ApplicationsMenuViewlet.pt:124
 msgid "workflow_policy"
-msgstr ""
+msgstr "Política de trabajo"
 
 #. Default: "${mourecount} More"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/browser/topbarmybutton.pt:132
