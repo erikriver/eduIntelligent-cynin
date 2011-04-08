@@ -76,7 +76,20 @@ spacesdefaultaddablenonfolderishtypes = ('Document',
                                          'Discussion',
                                          'Audio',
                                         )
-
+spacesdefaultaddableforcourses = ('Document',
+                                  'Event',
+                                  'File',
+                                  'Image',
+                                  'Link',
+                                  'Blog Entry',
+                                  'Video',
+                                  'Discussion',
+                                  'Audio',
+                                  'SCO',
+                                  'ZipContent',
+                                  'Quiz',
+                                  'Exam'
+                                  )
 sitetabs = ({'id':'central',
              'name':'Central',
              'url_expr':'string:$portal_url/spaces/central',

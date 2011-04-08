@@ -276,6 +276,11 @@ def getContentItemsCount(context,path=None):
     return lstinfo
 
 def getTotalItemCount(context):
+    if context.portal_type == 'Course':
+        from ubify.policy.config import spacesdefaultaddableforcourses
+        return  getTotalCountForQuery(context,path='/'.join(context.getPhysicalPath()),
+                                      queryparam={'portal_type':spacesdefaultaddableforcourses})
+    
     return  getTotalCountForQuery(context,path='/'.join(context.getPhysicalPath()),queryparam={'portal_type':spacesdefaultaddablenonfolderishtypes})
 
 def getSiteStatistics(context,path=None,ignoreviews=True,ignoretags=True):
