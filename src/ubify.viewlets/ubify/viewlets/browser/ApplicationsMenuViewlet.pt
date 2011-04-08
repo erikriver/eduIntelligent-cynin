@@ -43,11 +43,11 @@ Mumbai-400064, India
                 view_actions view/view_actions;
                 view_wfitems view/workflowmenuitems"
     i18n:domain="cynin">
-    <ul class="static_menu contentViews" tal:condition="python: context.portal_type in ('ContentSpace','ContentRoot','MemberSpace',)">
+    <ul class="static_menu contentViews" tal:condition="python: context.portal_type in ('ContentSpace','ContentRoot','MemberSpace','Course')">
         <li tal:attributes="class dbclass"
             tal:define="dbclass python:view.dashboard_selected and 'staticmenu_item dashboard selected' or (view.dashboard_item['visible'] and 'staticmenu_item dashboard' or 'hidden')"
-            tal:condition="python: context.portal_type in ('ContentSpace','ContentRoot',)">
-            <a tal:attributes="href homelink" tal:define="is_space python:context.portal_type in ('ContentSpace',);
+            tal:condition="python: context.portal_type in ('ContentSpace','ContentRoot','Course')">
+            <a tal:attributes="href homelink" tal:define="is_space python:context.portal_type in ('ContentSpace','Course');
                 homelink python: is_space and 'dashboard' or 'home'">
                 <img tal:attributes="src string:${portal_url}/icon-application_view_tile.png" class="apptabicon"/>
                 <span i18n:translate="dashboard">Dashboard</span>

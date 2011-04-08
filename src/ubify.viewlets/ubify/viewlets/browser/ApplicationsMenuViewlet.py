@@ -155,7 +155,7 @@ class ApplicationsMenuViewlet(ViewletBase):
         else:
             self.manage_selectedItem = None
 
-        if self.context.portal_type in ('ContentRoot','ContentSpace','MemberSpace'):
+        if self.context.portal_type in ('ContentRoot','ContentSpace','MemberSpace','Course'):
             if self.context.portal_type in ('ContentRoot','MemberSpace',):
                 ## Turn on Status Log view
                 statuslogs = [k for k in self.applications if k['id'].lower() == 'statusmessage']                
