@@ -43,11 +43,14 @@ Mumbai-400064, India
     To begin adding new content, select the Space in which you would like to add it to, and then click one of the content types below.
 </div>
     <tal:addcontenttypes tal:condition="not: view/anonymous" tal:define="dummylist python:[a for a in view.addnewitems if a['id'] not in view.contextdisallowedtypes];lendummy python:len(dummylist)">
-        <div class="AddToSpaceHolder">
+        <div class="AddToSpaceHolder" tal:condition="python:False">
             <label class="" i18n:translate="">Add to Space:</label>
             <select id="comcynapsespaceselector">
-                <tal:spaces repeat="item view/spaceslist">    
-                    <option tal:define="space item/object;depth item/depth;depthlist python:depth > 0 and [k for k in range(1,depth+1)] or [];" tal:attributes="value space/getURL;SELECTED python:space.UID == view.contextuid and 'SELECTED' or '';id space/UID;rel python:','.join(item['disallowedtypes']);class python:item['canAdd'] == False and 'disabledspaceselection' or '';"><tal:repeatdash repeat="dashitem depthlist">&mdash;&nbsp;</tal:repeatdash><tal:block tal:content="space/Title" /></option>
+                <tal:spaces repeat="item view/spaceslist">
+                    <span tal:content="item/object/UID"/>
+                    <span tal:content="view/contextuid"/>
+                    <option tal:define="space item/object;depth item/depth;depthlist python:depth > 0 and [k for k in range(1,depth+1)] or [];" 
+                            tal:attributes="value space/getURL;SELECTED python:space.UID == view.contextuid and 'SELECTED' or '';id space/UID;rel python:','.join(item['disallowedtypes']);class python:item['canAdd'] == False and 'disabledspaceselection' or '';"><tal:repeatdash repeat="dashitem depthlist">&mdash;&nbsp;</tal:repeatdash><tal:block tal:content="space/Title" /></option>
                 </tal:spaces>
             </select>
             <label i18n:translate="" id="comcynapseaddernotallowed" tal:attributes="class python:((lendummy > 0 or len(view.viewmenu) > 0 or 'ContentSpace' not in view.contextdisallowedtypes) and 'hidden') or ''">You are not allowed to add content to this Space.</label>

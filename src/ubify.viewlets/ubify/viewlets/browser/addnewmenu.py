@@ -140,11 +140,11 @@ class AddNewMenuViewlet(ViewletBase):
                     self.contextuid = objRoot.UID()
                     self.contextdisallowedtypes = objRoot.disallowedtypes()
             else:
-                if object_typename in ('ContentRoot','ContentSpace') and self.context.isPrincipiaFolderish and checkHasPermission('Add portal content',aq_inner(self.context)):                
+                if object_typename in ('ContentRoot','ContentSpace', 'Course') and self.context.isPrincipiaFolderish and checkHasPermission('Add portal content',aq_inner(self.context)):                
                     self.currentcontextmenu = menu.getMenuItems(self.context, self.request)
                     self.contextualurl = aq_inner(self.context).absolute_url()
                     
-                    if object_typename in ('ContentRoot','ContentSpace'):
+                    if object_typename in ('ContentRoot','ContentSpace','Course'):
                         self.currentcontexttitle = context_state.object_title()
                         self.contextuid = aq_inner(self.context).UID()
                         self.contextdisallowedtypes = (aq_inner(self.context)).disallowedtypes()
@@ -156,7 +156,7 @@ class AddNewMenuViewlet(ViewletBase):
             
                     try:
                         for type in parentList:
-                            if type.portal_type in ('ContentRoot','ContentSpace'):
+                            if type.portal_type in ('ContentRoot','ContentSpace','Course'):
                                 parentspace = type
                                 if checkHasPermission('Add portal content',aq_inner(parentspace)):
                                     found = 1
