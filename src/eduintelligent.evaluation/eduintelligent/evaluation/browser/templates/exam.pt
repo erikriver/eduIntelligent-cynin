@@ -24,8 +24,8 @@
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
         <div tal:replace="structure provider:plone.abovecontentbody" />
-
         <h1 class="documentFirstHeading" tal:content="context/title" />
+        <div class="documentDescription" tal:content="structure context/description" />       
 
         <dl id="exam-box2"
             class="portalMessage info"
@@ -63,10 +63,10 @@
             class="portalMessage info"
             tal:condition="not: context/getNumberUserQuestion">
             <dt i18n:translate="">
-                INFO
+                INFORMACI&Oacute;N
             </dt>
             <dd>
-                <b i18n:translate="info_no_participate">The Exam has no questions. Please add some.</b>
+                <b i18n:translate="info_no_participate">Este examen no tiene preguntas. A&ntilde;ada algunas por favor.</b>
             </dd>
         </dl>
         
@@ -80,18 +80,18 @@
            title = "El alumno escribe su respuesta en un cuadro de texto para su posterior evaluaci&oacute;n por parte del maestro."
            href="createObject?type_name=QuestionFillIn"
            tal:attributes="href string:${here_url}/createObject?type_name=QuestionFillIn" 
-           i18n:translate="">[+] Pregunta abierta.</a>
+           i18n:translate="">[+] Pregunta abierta</a>
         <a class="whitebutton cluetipnoie"
            title = "El alumno selecciona una o varias respuestas de una lista."
            href="createObject?type_name=QuestionChoice"
            tal:attributes="href string:${here_url}/createObject?type_name=QuestionChoice" 
-           i18n:translate="">[+] Opci&oacute;n m&uacute;ltiple.</a>
+           i18n:translate="">[+] Opci&oacute;n m&uacute;ltiple</a>
         <a class="whitebutton cluetipnoie"
-           title = "Vea una lista con todas las preguntas incluidas en este examen."
-           href="folder_contents"
-           tal:attributes="href string:${here_url}/folder_contents" 
-           i18n:translate="">Ver todas las preguntas.</a>
-           
+           title = "Reportes varios acerca de este examen."
+           href="@@calificaciones-y-reportes"
+           tal:attributes="href string:${here_url}/@@calificaciones-y-reportes" 
+           i18n:translate="">Calificaciones y reportes</a>
+        <div class="spacer" style="clear:left; width:100%;" />
         <div style="display:block; float: right;">
         <table class="vertical listing">
               <tr>
@@ -156,11 +156,6 @@
                 </tr>
               </tal:block>              
         </table>
-        
-        
-        <div class="documentDescription" tal:content="structure context/description" />        
-        
-        <div tal:replace="structure provider:plone.abovecontentbody" />
 
     </tal:main-macro>
 </metal:main>

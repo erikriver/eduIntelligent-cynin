@@ -19,7 +19,12 @@
         permission="zope2.View"
         allowed_interface="..interfaces.IExam"
         />
-
+    <browser:page
+        for="..interfaces.IEvaluation"
+        name="calificaciones-y-reportes"
+        template="templates/calificacionesyreportes.pt"
+        permission="zope2.View"
+        />
         
     <browser:menuItem
         for="..interfaces.IEvaluation"

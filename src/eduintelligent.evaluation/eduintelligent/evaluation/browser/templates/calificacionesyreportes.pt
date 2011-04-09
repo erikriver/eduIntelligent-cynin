@@ -1,0 +1,74 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="eduintelligent.evaluation">
+<body>
+<head>                     
+    <metal:css fill-slot="css_slot">
+        <style type="text/css" media="all"
+               tal:attributes="href: string:${context/++resource++evaluation.css};">
+        </style>
+    </metal:css>
+
+    <metal:js fill-slot="javascript_head_slot">
+        <script type="text/javascript"
+        tal:attributes="src string:${context/++resource++evaluation.js};"></script>
+    </metal:js>
+</head>
+    
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main" tal:define="foo context/initTrack;
+                                                          canTake context/canTakeExam">
+
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+        <div tal:replace="structure provider:plone.abovecontentbody" />
+        <h1 class="documentFirstHeading" tal:content="context/title" />
+        <div class="documentDescription" tal:content="structure context/description" />        
+        <br />
+        <dl id="exam-box"
+            class="portalMessage info"
+            tal:condition="not: context/getNumberUserQuestion">
+            <dt i18n:translate="">
+                INFORMACI&Oacute;N
+            </dt>
+            <dd>
+                <b i18n:translate="info_no_participate">Este examen no tiene preguntas.
+                <a href="" tal:attributes="href context/absolute_url">A&ntilde;ada algunas por favor.</a></b>
+            </dd>
+        </dl>
+        
+        <a class="whitebutton cluetipnoie"
+           title = "Tabla de resultados de la evaluaci&oacute;n. Contiene las calificaciones de los estudiantes."
+           tal:attributes="href string:${here_url}/@@results"
+           i18n:translate="">Resultados de la evaluaci&oacute;n</a>
+           <br /><br />
+        <a class="whitebutton cluetipnoie"
+           title = "El maestro debe calificar manualmente las preguntas abiertas."
+           tal:attributes="href string:${here_url}/@@grade"
+           i18n:translate="">Calificar preguntas abiertas</a>
+           <br /><br />
+        <a class="whitebutton cluetipnoie"
+           title = "El maestro puede asignar puntos extras a ciertos alumnos."
+           tal:attributes="href string:${here_url}/@@extra"
+           i18n:translate="">Calificaciones extras</a>
+           <br /><br />
+        <a class="whitebutton cluetipnoie"
+           title = "Tabla con una lista de los alumnos que reprobaron el examen."
+           tal:attributes="href string:${here_url}/@@failed"
+           i18n:translate="">Reprobados</a>
+           <br /><br />
+        <a class="whitebutton cluetipnoie"
+           title = "Estadísticas de calificaciones de este examen."
+           tal:attributes="href string:${here_url}/@@statistics"
+           i18n:translate="">Estad&iacute;sticas</a>
+           
+
+
+    </tal:main-macro>
+</metal:main>
+
+</body>
+</html>
+

@@ -38,7 +38,7 @@
          category="object"
          condition_expr=""
          url_expr="string:${object_url}/@@results"
-         visible="True"
+         visible="False"
          i18n:attributes="title">
   <permission value="Modify portal content"/>
  </action> 
@@ -48,7 +48,7 @@
          category="object"
          condition_expr=""
          url_expr="string:${object_url}/@@grade"
-         visible="True"
+         visible="False"
          i18n:attributes="title">
   <permission value="Modify portal content"/>
  </action>
@@ -58,7 +58,7 @@
           category="object"
           condition_expr=""
           url_expr="string:${object_url}/@@extra"
-          visible="True"
+          visible="False"
           i18n:attributes="title">
   <permission value="Modify portal content"/>
  </action>
@@ -68,7 +68,7 @@
           category="object"
           condition_expr=""
           url_expr="string:${object_url}/@@failed"
-          visible="True"
+          visible="False"
           i18n:attributes="title">
   <permission value="Modify portal content"/>
  </action>
@@ -78,7 +78,7 @@
          category="object"
          condition_expr=""
          url_expr="string:${object_url}/@@statistics"
-         visible="True"
+         visible="False"
          i18n:attributes="title">
   <permission value="Modify portal content"/>
  </action>
