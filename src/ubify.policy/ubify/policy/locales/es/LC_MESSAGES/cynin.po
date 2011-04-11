@@ -256,7 +256,7 @@ msgstr "Añadir más votados Portlet"
 
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/portlets/wikiportlet.py:129
 msgid "Add Wiki Portlet"
-msgstr "Añadir Wiki Portlet"
+msgstr "Añadir Portlet de Documentos"
 
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/browser/navigation.pt:44
 msgid "Add a new"
@@ -697,7 +697,7 @@ msgstr "Editar perfil de usuario"
 
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/portlets/wikiportlet.py:137
 msgid "Edit Wiki Portlet"
-msgstr "Edit Wiki Portlet"
+msgstr "Edit Portlet de Documentos"
 
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/app_wiki.pt:90
 msgid "Edit start page"
@@ -1807,11 +1807,11 @@ msgstr "Bienvenido a cyn.in!"
 
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/author.cpt:303
 msgid "Wiki"
-msgstr "Wiki"
+msgstr "Documento"
 
 #: ../../../../ubify.coretypes/ubify/coretypes/profiles/default/types/Document.xml
 msgid "Wiki Page"
-msgstr "Página Wiki"
+msgstr "Documento"
 
 #: ../../../../ubify.policy/ubify/policy/profiles/default/workflows/ubify_views_workflow/definition.xml
 msgid "Workflow for views"
@@ -2939,7 +2939,7 @@ msgstr "Elementos Recientes"
 #. Default: "Recently Active Wiki Pages"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/app_wiki.pt:98
 msgid "header_recently_active_wiki_pages"
-msgstr "Recientemente Active Wiki Pages"
+msgstr "Documentos recientemente activos"
 
 #. Default: "Related Content"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/links_macro.pt:56
@@ -2994,7 +2994,7 @@ msgstr "Quién"
 #. Default: "Wiki Pages"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/portlets/wikiportlet.pt:45
 msgid "header_wiki_pages"
-msgstr "Wiki Pages"
+msgstr "Documentos"
 
 #. Default: "Actions"
 #: ../../../../ubify.viewlets/ubify/viewlets/browser/contentactions.pt:42
@@ -4562,7 +4562,7 @@ msgstr "Dónde"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/belowcontent_macro.pt:135
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/description_macro.pt:116
 msgid "label_wiki_link"
-msgstr "Enlace Wiki:"
+msgstr "Enlace tipo wiki:"
 
 #. Default: "Workflows by type"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/prefs_workflow_policy_mapping.pt:145
@@ -5171,7 +5171,7 @@ msgstr "Videoteca"
 #: ../../../../ubify.coretypes/ubify/coretypes/config.py:201
 #: ../../../../ubify.policy/ubify/policy/profiles/default/actions.xml
 msgid "menu_wiki"
-msgstr "Wiki"
+msgstr "Documento"
 
 #. you copied the URL exactly as it appears in your email and that you entered
 #. your user name correctly."
@@ -5691,7 +5691,7 @@ msgstr "Sindicación en vivo de todos los Favoritos en Blufrog."
 #. Default: "Live feed for Wiki Pages across this cyn.in site."
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/syndicationinfo.pt:197
 msgid "syndication_wiki"
-msgstr "Sindicación en vivo de todos los Wikis en Blufrog."
+msgstr "Sindicación en vivo de todos los Documentos en Blufrog."
 
 #. Default: "All"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/portlets/recentsiteupdatesportlet.pt:45
@@ -5761,7 +5761,7 @@ msgstr "Video"
 #. Default: "Wiki"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/portlets/recentsiteupdatesportlet.pt:55
 msgid "tab_wiki"
-msgstr "Wiki"
+msgstr "Documentos"
 
 #. Default: "All ${count} items on this page are selected."
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/browser/cynintable.pt:144
@@ -6074,7 +6074,7 @@ msgstr ""
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/__init__.py:697
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/syndicationinfo.pt:196
 msgid "wiki"
-msgstr ""
+msgstr "documento"
 
 #. Default: "Workflow policy"
 #: ../../../../ubify.viewlets/ubify/viewlets/browser/ApplicationsMenuViewlet.pt:124
