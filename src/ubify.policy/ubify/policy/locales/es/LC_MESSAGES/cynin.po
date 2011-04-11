@@ -2052,7 +2052,7 @@ msgstr "Establecer"
 #. Default: "Go to Top${uparrow}"
 #: ../../../../ubify.viewlets/ubify/viewlets/browser/gototoplink.pt:2
 msgid "button_top"
-msgstr "Ir a la Top${uparrow}"
+msgstr "Haci a arriba ${uparrow}"
 
 #. Default: "View"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/files_listing.pt:136
