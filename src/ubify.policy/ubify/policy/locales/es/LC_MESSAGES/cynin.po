@@ -307,11 +307,11 @@ msgstr "Todos los miembros con privilegios de vista puede acceder a este conteni
 
 #: ../../../../ubify.coretypes/ubify/coretypes/profiles/default/types/ContentSpace.xml
 msgid "An area to collaborate"
-msgstr "Un área de colaborar"
+msgstr "Un área de colaboración"
 
 #. Default: "Anonymous"
 msgid "Anonymous"
-msgstr ""
+msgstr "Anónimo"
 
 #: ../../../../ubify.policy/ubify/policy/profiles/default/workflows/ubify_contentroot_workflow/definition.xml
 msgid "Anonymous Visitors can access this content"
@@ -773,7 +773,7 @@ msgstr "Tipo de archivo"
 
 #: ../../../../ubify.coretypes/ubify/coretypes/profiles/default/types/File.xml
 msgid "File upload"
-msgstr "Subida de archivos"
+msgstr "Subir archivos"
 
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/author.cpt:300
 msgid "Files"
@@ -1233,7 +1233,7 @@ msgstr "Publicado a los televidentes"
 
 #: ../../../../ubify.coretypes/ubify/coretypes/profiles/default/types/Discussion.xml
 msgid "Quick conversation"
-msgstr "Conversación rápida"
+msgstr "Discutir un tema en específico mediante comentarios."
 
 #: ../../../../ubify.policy/ubify/policy/profiles/default/actions.xml
 msgid "RSS feed"
@@ -1364,11 +1364,11 @@ msgstr "Replegarse en privado"
 
 #. Default: "Reviewer"
 msgid "Reviewer"
-msgstr ""
+msgstr "Revisor"
 
 #: ../../../../ubify.coretypes/ubify/coretypes/profiles/default/types/Document.xml
 msgid "Rich interlinked document"
-msgstr "Documento Rich interrelacionados"
+msgstr "Documentos con texto, audio y video."
 
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/browser/userinfo.pt:103
 msgid "Roles in this Space:"
@@ -1811,7 +1811,7 @@ msgstr "Wiki"
 
 #: ../../../../ubify.coretypes/ubify/coretypes/profiles/default/types/Document.xml
 msgid "Wiki Page"
-msgstr "Wiki Page"
+msgstr "Página Wiki"
 
 #: ../../../../ubify.policy/ubify/policy/profiles/default/workflows/ubify_views_workflow/definition.xml
 msgid "Workflow for views"
