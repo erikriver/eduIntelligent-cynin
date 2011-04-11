@@ -1,23 +1,4 @@
-div#header{
-    height:35px;
-    border-bottom:1px solid #2a8bb8;
-    background:#dcecf9;
-    padding:.5em;
-    font-size:1.2em;
-    }
-    
-div#footer{
-    height:35px;
-    width:98%;
-    border-top:1px solid #2a8bb8;
-    background:#dcecf9;
-    padding:.5em;
-    font-size:1.2em;
-    position: absolute;
-    bottom: 0;
-    }    
-
-.right {
+ .right {
   float: right;
 }
 
@@ -98,6 +79,25 @@ label {
 label.QuestionTitle {
     padding:1em;
     font-size:1.7em;
+}
+
+/* Vista principal de examen */
+
+.btn-gray {
+	padding: 0.4em 0.6em;
+}
+
+.add img,
+.calificaciones img {
+	vertical-align: middle;
+}
+
+.spacer{
+	clear:left; 
+	width:100%;
+	height: 2em;
+	display:block;
+
 }
 
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */

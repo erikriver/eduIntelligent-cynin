@@ -7,14 +7,13 @@
 <body>
 <head>                     
     <metal:css fill-slot="css_slot">
-        <style type="text/css" media="all"
-               tal:attributes="href: string:${context/++resource++evaluation.css};">
-        </style>
+        <link rel="stylesheet" type="text/css" media="all"
+               tal:attributes="href string:${portal_url}/++resource++evaluation.css;"/>
     </metal:css>
 
     <metal:js fill-slot="javascript_head_slot">
         <script type="text/javascript"
-        tal:attributes="src string:${context/++resource++evaluation.js};"></script>
+        tal:attributes="src string:${portal_url}/++resource++evaluation.js;"></script>
     </metal:js>
 </head>
     
@@ -76,22 +75,30 @@
            tal:condition="python: context.haveTime() and context.getNumberUserQuestion() and canTake"
            i18n:attributes="title"
            i18n:translate="">Iniciar Examen</a>
-        <a class="whitebutton cluetipnoie"
+        <a class="whitebutton cluetipnoie add"
            title = "El alumno escribe su respuesta en un cuadro de texto para su posterior evaluaci&oacute;n por parte del maestro."
            href="createObject?type_name=QuestionFillIn"
            tal:attributes="href string:${here_url}/createObject?type_name=QuestionFillIn" 
-           i18n:translate="">[+] Pregunta abierta</a>
-        <a class="whitebutton cluetipnoie"
+           i18n:translate="">
+           <img src="icon-add.png" 
+                tal:attributes="src string:${portal_url}/icon-add.png"/> Pregunta abierta</a>
+        <a class="whitebutton cluetipnoie add"
            title = "El alumno selecciona una o varias respuestas de una lista."
            href="createObject?type_name=QuestionChoice"
            tal:attributes="href string:${here_url}/createObject?type_name=QuestionChoice" 
-           i18n:translate="">[+] Opci&oacute;n m&uacute;ltiple</a>
-        <a class="whitebutton cluetipnoie"
+           i18n:translate="">
+           <img src="icon-add.png" 
+                tal:attributes="src string:${portal_url}/icon-add.png"/> Opci&oacute;n m&uacute;ltiple</a>
+        <a class="whitebutton cluetipnoie calificaciones"
            title = "Reportes varios acerca de este examen."
            href="@@calificaciones-y-reportes"
            tal:attributes="href string:${here_url}/@@calificaciones-y-reportes" 
-           i18n:translate="">Calificaciones y reportes</a>
-        <div class="spacer" style="clear:left; width:100%;" />
+           i18n:translate="">
+           <img src="icon-application_form.png" 
+                tal:attributes="src string:${portal_url}/icon-application_form.png"/> Calificaciones y reportes</a>
+                
+        <div class="spacer"> </div>
+        
         <div style="display:block; float: right;">
         <table class="vertical listing">
               <tr>
@@ -156,7 +163,6 @@
                 </tr>
               </tal:block>              
         </table>
-
     </tal:main-macro>
 </metal:main>
 
