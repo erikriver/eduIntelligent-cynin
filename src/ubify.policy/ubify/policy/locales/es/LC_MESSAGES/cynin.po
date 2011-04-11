@@ -5711,7 +5711,7 @@ msgstr "Blog"
 #. Default: "Commenters"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/portlets/statisticsportlet.pt:46
 msgid "tab_commenters"
-msgstr "Comentadores"
+msgstr "Comentarios"
 
 #. Default: "Contributors"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/portlets/statisticsportlet.pt:45
