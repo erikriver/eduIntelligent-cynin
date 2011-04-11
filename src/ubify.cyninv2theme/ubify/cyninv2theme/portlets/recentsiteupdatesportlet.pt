@@ -41,11 +41,12 @@ Mumbai-400064, India
             i18n:domain="cynin">
     <fieldset class="contentheaderlabel"><legend i18n:translate="header_recent_items">Recent Items</legend></fieldset>
     <div id="siteupdatesportlet">
-        <ul class="vertical-tabs">
+        <ul class="vertical-tabs" tal:define="es_un_curso python: context.portal_type == 'Course'">
+            <li class="verticaltab all"><a href="#siteupdatesportlet-fragment-1" i18n:translate="tab_all" tal:condition="not: es_un_curso">All</a></li>
+            <li class="verticaltab messages" tal:condition="view/showmessages"><a href="#siteupdatesportlet-fragment-11" i18n:translate="tab_status_log">Statuses</a></li>
             <li class="verticaltab wiki"><a href="#siteupdatesportlet-fragment-2" i18n:translate="tab_wiki">Wiki</a></li>
-            <li class="verticaltab all"><a href="#siteupdatesportlet-fragment-1" i18n:translate="tab_all" tal:condition="python:False">All</a></li>
-            <li class="verticaltab educativos"><a href="#siteupdatesportlet-fragment-12" tal:condition="python: context.portal_type == 'Course'">Educativos</a></li>
-            <li class="verticaltab examenes"><a href="#siteupdatesportlet-fragment-13" tal:condition="python: context.portal_type == 'Course'">Examenes</a></li>
+            <li class="verticaltab educativos"><a href="#siteupdatesportlet-fragment-12" tal:condition="es_un_curso">Educativos</a></li>
+            <li class="verticaltab examenes"><a href="#siteupdatesportlet-fragment-13" tal:condition="es_un_curso">Examenes</a></li>
             <li class="verticaltab audio"><a href="#siteupdatesportlet-fragment-10" i18n:translate="tab_audios">Audio</a></li>
             <li class="verticaltab blog"><a href="#siteupdatesportlet-fragment-4" i18n:translate="tab_blog">Blog</a></li>
             <li class="verticaltab links"><a href="#siteupdatesportlet-fragment-7" i18n:translate="tab_links">Bookmarks</a></li>
