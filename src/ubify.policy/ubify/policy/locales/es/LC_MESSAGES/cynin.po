@@ -2052,7 +2052,7 @@ msgstr "Establecer"
 #. Default: "Go to Top${uparrow}"
 #: ../../../../ubify.viewlets/ubify/viewlets/browser/gototoplink.pt:2
 msgid "button_top"
-msgstr "Haci a arriba ${uparrow}"
+msgstr "Hacia arriba ${uparrow}"
 
 #. Default: "View"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/files_listing.pt:136
@@ -4462,7 +4462,7 @@ msgstr "Tema"
 #. Default: "Subscribe by Email"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/belowcontent_macro.pt:247
 msgid "label_subscribe_email"
-msgstr "Envíarme notificaciones por email"
+msgstr "Enviarme notificaciones por email"
 
 #. Default: "Tags:"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/belowcontent_macro.pt:80
