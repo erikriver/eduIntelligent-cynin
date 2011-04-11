@@ -42,7 +42,7 @@ Mumbai-400064, India
     <fieldset class="contentheaderlabel"><legend i18n:translate="header_recent_items">Recent Items</legend></fieldset>
     <div id="siteupdatesportlet">
         <ul class="vertical-tabs">
-            <li class="verticaltab all"><a href="#siteupdatesportlet-fragment-1" i18n:translate="tab_all">All</a></li>
+            <li class="verticaltab all"><a href="#siteupdatesportlet-fragment-1" i18n:translate="tab_all" tal:condition="python:False">All</a></li>
             <li class="verticaltab educativos"><a href="#siteupdatesportlet-fragment-12" tal:condition="python: context.portal_type == 'Course'">Educativos</a></li>
             <li class="verticaltab examenes"><a href="#siteupdatesportlet-fragment-13" tal:condition="python: context.portal_type == 'Course'">Examenes</a></li>
             <li class="verticaltab audio"><a href="#siteupdatesportlet-fragment-10" i18n:translate="tab_audios">Audio</a></li>
@@ -56,7 +56,7 @@ Mumbai-400064, India
             <li class="verticaltab video"><a href="#siteupdatesportlet-fragment-8" i18n:translate="tab_videos">Video</a></li>
             <li class="verticaltab wiki"><a href="#siteupdatesportlet-fragment-2" i18n:translate="tab_wiki">Wiki</a></li>
         </ul>
-        <div id="siteupdatesportlet-fragment-1" class="vertical-tabs-panel">
+        <div id="siteupdatesportlet-fragment-1" class="vertical-tabs-panel" tal:condition="python:False">
             <tal:block tal:define="folderContents view/results">
                 <div metal:use-macro="context/recentupdate_macro/macros/listing"/>
                 <div class="morelinkrow">
