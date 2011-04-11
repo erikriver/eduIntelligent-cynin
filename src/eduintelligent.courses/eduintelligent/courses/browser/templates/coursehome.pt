@@ -11,7 +11,9 @@
     </metal:block>
 </head>
 <body>
-    <div class="homepagefullcontainer" metal:fill-slot="contentwithnopadding">
+    <div class="homepagefullcontainer" metal:fill-slot="contentwithnopadding"
+         tal:define="curso_vigente python:context.restrictedTraverse('@@viewapi').valid_vigency()">
+        <tal:vigente tal:condition="curso_vigente">
         <div id="homeacrossportletholder">
             <tal:acrossportlet tal:replace="structure provider:ubify.mindmapportletmanager" />
         </div>
@@ -25,6 +27,13 @@
             </div>
         </div>
         <tal:macro metal:use-macro="here/belowcontent_macro/macros/space_footer_actions" />
+        </tal:vigente>
+        <tal:novigente tal:condition="not: curso_vigente">
+          <div id="portal-content-block">
+            <h2>Este curso ha caducado</h2>
+            <p>Lo sentimos, pero este curso ya caduc&oacute;. Ponte en contacto con tu Maestro o Instructor.</p>
+          </div>
+        </tal:novigente>
     </div>
 </body>
 </html>

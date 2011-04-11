@@ -27,7 +27,7 @@
                 
     <browser:page
         for="..interfaces.ICourse"
-        name="view"
+        name="viewapi"
         class=".course.CourseView"
         permission="zope2.View"
         />
@@ -105,4 +105,5 @@
         class=".course.CourseDashboard"
         permission="zope2.View"
         />
+        
 </configure>
