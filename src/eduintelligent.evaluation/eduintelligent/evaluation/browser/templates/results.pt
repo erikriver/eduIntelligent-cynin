@@ -8,6 +8,21 @@
     <metal:css fill-slot="css_slot">
         <style type="text/css" media="all"
                 tal:content="string: @import url(${context/++resource++extra_grade.css});"></style>
+
+    <style>
+		.whitebutton {
+		background: url("g-white-s.gif") repeat-x scroll left bottom #FFFFFF;
+	    border: 1px solid #999999;
+		color: #666666;
+	    margin: 7px 3px;
+		padding: 4px 1em;
+		-moz-border-radius: 5px;
+		border-radius: 5px; 
+		}
+		#viewForm{
+			float:left;
+		}
+    </style>
     </metal:css>
 </head>
 
@@ -29,9 +44,8 @@
               id="btn_export"
               name="form.button.Export"
               type="submit"
-              class="context allowMultiSubmit"
-              value="Export"
-              i18n:attributes="value"
+              class="whitebutton"
+              value="Exportar esta lista a Excel"
               />
 
     </form>
@@ -46,9 +60,8 @@
             id="btn_list"
             name="form.button.Listing"
             type="submit"
-            class="context allowMultiSubmit"
-            value="Pending Users"
-            i18n:attributes="value"
+            class="whitebutton"
+            value="Usuarios pendientes de calificaci&oacute;n"
             />    
 
     </form>
@@ -97,7 +110,38 @@
 
         </tbody>
       </table>
+    <div class="inlineAddFields">
+    
+    <form tal:attributes="action string:${context/absolute_url}/@@export"
+          name="viewForm"
+          id="viewForm"
+          method="post" >
+          <input
+              id="btn_export"
+              name="form.button.Export"
+              type="submit"
+              class="whitebutton"
+              value="Exportar esta lista a Excel"
+              />
 
+    </form>
+    
+    <form tal:attributes="action string:${context/absolute_url}/@@listing"
+          name="viewForm2"
+          id="viewForm2"
+          method="post" >
+          
+
+        <input
+            id="btn_list"
+            name="form.button.Listing"
+            type="submit"
+            class="whitebutton"
+            value="Usuarios pendientes de calificaci&oacute;n"
+            />    
+
+    </form>
+    </div>
 </div>
 </body>
 </html>
