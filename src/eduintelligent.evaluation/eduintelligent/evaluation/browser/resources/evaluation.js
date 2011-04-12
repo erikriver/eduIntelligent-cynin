@@ -1,19 +1,3 @@
-function evaluation_viewer(portal_url) {
-    var url = portal_url;
-    var defines = 'dependent=yes,';
-    defines += 'toolbar=no,';
-    defines += 'location=no,';
-    defines += 'status=no,';
-    defines += 'menubar=no,';
-    defines += 'scrollbars=yes,';
-    defines += 'resizable=yes,';
-    defines += 'width=700,';
-    defines += 'height=500,';
-    defines += 'left=300'; 
-    
-    window.open(url, 'evaluation_view', defines);
-}
-
 var countdown_value = 0;
 
 function q_countdown()
