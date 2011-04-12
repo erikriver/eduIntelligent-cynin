@@ -12,6 +12,7 @@ label.radio_unchecked {
     display:block;
     margin: 10px 0;
     padding-left: 25px;
+    text-align: left;
 }
 
 label.checkbox_checked ,
