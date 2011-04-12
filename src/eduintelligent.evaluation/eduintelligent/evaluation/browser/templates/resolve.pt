@@ -19,8 +19,9 @@
     <tal:scripts define="view context/@@plone|nothing"
                  replace="structure provider:plone.resourceregistries.scripts" />            
     
-    <style type="text/css" media="all"
-           tal:content="string: @import url(${portal_url}/++resource++evaluation.css);"></style>
+    <link rel="stylesheet" type="text/css" href="++resource++evaluation.css" 
+          media="screen" 
+          tal:attributes="href context/++resource++evaluation.css"/>
     <script type="text/javascript"
            tal:attributes="src context/++resource++evaluation.js"></script>
    <style type="text/css">
@@ -28,7 +29,21 @@
            background-image:none;
    }
    </style>
-    
+   <script type="text/javascript" tal:content="string: var url='${portal_url}';">
+            var url = portal_url;
+    </script>
+   <script type="text/javascript">
+        var defines = 'dependent=yes,';
+        defines += 'toolbar=no,';
+        defines += 'location=no,';
+        defines += 'status=no,';
+        defines += 'menubar=no,';
+        defines += 'scrollbars=yes,';
+        defines += 'resizable=yes,';
+        defines += 'width=700,';
+        defines += 'height=500,';
+        defines += 'left=300';
+    </script>
 </head>
 
 <body oncontextmenu="return false">

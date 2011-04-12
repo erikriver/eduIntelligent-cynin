@@ -63,7 +63,7 @@
 
 <tal:block tal:condition="python: context.portal_type=='Exam'">
 <input
-    class="submitButton"
+    class="btn-gray"
     tabindex=""
     type="submit"
     name="Init"
@@ -74,7 +74,7 @@
 
 <tal:block tal:condition="python:context.portal_type=='Quiz'">
 <input
-    class="submitButton"
+    class="btn-gray"
     tabindex=""
     type="submit"
     name="Init"
@@ -84,12 +84,12 @@
 </tal:block>    
 
 <input
-    class="submitButton"
+    class="btn-gray"
     tabindex=""
     type="submit"
     name="Submit"
     value="Close"
-    onclick="javascript:window.close()" 
+    onclick="javascript:$('#closeBut').click()"
     i18n:attributes="value"/>
 
 </form>

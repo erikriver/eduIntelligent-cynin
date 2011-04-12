@@ -7,14 +7,27 @@
 <body>
 <head>                     
     <metal:css fill-slot="css_slot">
-        <link rel="stylesheet" type="text/css" media="all"
-               tal:attributes="href string:${portal_url}/++resource++evaluation.css;"/>
+    <style>
+		/* Vista principal de examen */
+		
+		.btn-gray {
+			padding: 0.4em 0.6em;
+		}
+		
+		.add img,
+		.calificaciones img {
+			vertical-align: middle;
+		}
+		
+		.spacer{
+			clear:left; 
+			width:100%;
+			height: 2em;
+			display:block;
+		
+		}
+    </style>
     </metal:css>
-
-    <metal:js fill-slot="javascript_head_slot">
-        <script type="text/javascript"
-        tal:attributes="src string:${portal_url}/++resource++evaluation.js;"></script>
-    </metal:js>
 </head>
     
 <metal:main fill-slot="main">
@@ -69,9 +82,10 @@
             </dd>
         </dl>
         
-        <a onClick="" class="btn-gray cluetipnoie"
+        <a onClick="" class="btn-gray cluetipnoie examen"
+           target="_blank"
            title = "Start the exman just ONE click"
-           tal:attributes="onClick string:javascript:evaluation_viewer('${here_url}/resolve')"
+           tal:attributes="onClick string:javascript:evaluation_viewer('${here_url}/resolve'); href string:${here_url}/resolve;"
            tal:condition="python: context.haveTime() and context.getNumberUserQuestion() and canTake"
            i18n:attributes="title"
            i18n:translate="">Iniciar Examen</a>
@@ -163,6 +177,21 @@
                 </tr>
               </tal:block>              
         </table>
+        <script type="text/javascript">
+            /// A ver si no truena
+            (function( $ ){
+              $(document).ready( function() {
+                $('.examen').nyroModal({title:'Examen',
+                                        minWidth:720,
+                                        minHeight:450,
+										closeOnEscape: false,
+										closeOnClick: false,
+										showCloseButton: false
+										});
+              }
+              );
+            })( jQuery );
+        </script>
     </tal:main-macro>
 </metal:main>
 

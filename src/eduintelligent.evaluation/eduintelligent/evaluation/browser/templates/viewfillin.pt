@@ -47,7 +47,7 @@
     <span class="right">
         <input
             onclick="javascript:computeTime();"
-            class="submitButton"
+            class="btn-gray"
             tabindex=""
             type="submit"
             name="btnSubmit"
@@ -57,7 +57,7 @@
             
         <input
             onclick="javascript:finish_question();"
-            class="submitButton"
+            class="btn-gray"
             tabindex=""
             type="submit"
             name="btnSubmit"
