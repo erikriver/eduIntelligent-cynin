@@ -79,7 +79,7 @@ class ExamResults(BrowserView):
         else:
             return ((score + score_extra) / 2)
     
-    @memoize
+    #@memoize
     def contents(self):
         """
             Return contents, sorted by average.
@@ -113,7 +113,6 @@ class ExamResults(BrowserView):
         #finally sort by average    
         data.sort(cmp=self.compareFunction)
         return data
-        
 
 class ExamUpdateExtraGrade(ExamResults):
     """View for adding/updating extra grades.

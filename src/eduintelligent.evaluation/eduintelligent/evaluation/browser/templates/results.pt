@@ -12,14 +12,12 @@
 </head>
 
 <body>
-<div metal:fill-slot="main"
-    tal:define="results view/contents;">
+<div metal:fill-slot="main">
     
-    <div tal:replace="structure provider:plone.abovecontenttitle" />
-
-    <h1 class="documentFirstHeading" tal:content="context/title" />
-
-    <div tal:replace="structure provider:plone.abovecontentbody" />
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+        <div tal:replace="structure provider:plone.abovecontentbody" />
+        <h1 class="documentFirstHeading" tal:content="context/Title" />
+        <div class="documentDescription" tal:content="structure context/Description" />
     
     <div class="inlineAddFields">
     
@@ -62,7 +60,6 @@
         <th i18n:translate="">No</th>
         <th i18n:translate="">UserID</th>
         <th i18n:translate="">Name</th>
-        <th i18n:translate="">Position</th>
         <th i18n:translate="">Score</th>
         <th i18n:translate="">Extra Grade</th>
         <th i18n:translate="">Average</th>
@@ -71,13 +68,18 @@
       </thead>
       <tbody>
           
-      <tal:block repeat="data results">
+      <tal:block define="results view/contents" repeat="data results">
        <tr tal:define="oddrow repeat/data/odd; rownumber repeat/data/number"
            tal:attributes="class python:oddrow and 'odd' or 'even'">
            <td tal:content="repeat/data/number"></td>
            <td tal:content="data/userid"></td>
-           <td tal:content="data/member/getFullname"></td>
-           <td tal:content="data/member/getPositionName"></td>
+           <tal:peligroso condition="not: exists: data/member/getFullname">
+           
+           <td >Sin nombre</td>
+           </tal:peligroso>
+           <tal:seguro condition="exists: data/member/getFullname">
+           <td tal:content="data/member/getFullname">Con nombre</td>
+           </tal:seguro>
            <td tal:content="data/score"></td>
            <td tal:content="data/score_extra"></td>
            <td tal:content="data/average"
@@ -95,8 +97,6 @@
 
         </tbody>
       </table>
-
-    <div tal:replace="structure provider:plone.belowcontentbody" />
 
 </div>
 </body>
