@@ -36,8 +36,8 @@
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
         <div tal:replace="structure provider:plone.abovecontentbody" />
-        <h1 class="documentFirstHeading" tal:content="context/title" />
-        <div class="documentDescription" tal:content="structure context/description" />       
+        <h1 class="documentFirstHeading" tal:content="context/Title" />
+        <div class="documentDescription" tal:content="structure context/Description" />
 
         <dl id="exam-box2"
             class="portalMessage info"
