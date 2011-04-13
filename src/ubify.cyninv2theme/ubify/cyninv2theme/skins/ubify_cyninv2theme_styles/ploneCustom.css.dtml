@@ -5187,4 +5187,12 @@ padding-bottom:1.8333em;
 width:98%;
 }
 /*-------------------------------------------------------------------------------*/
+/*Kupu? */
+.TOC1Digit {
+	list-style: none outside none;
+}
+
+.TOC1Digit li {
+	list-style: upper-alpha outside none;
+}
 /* </dtml-with> */
