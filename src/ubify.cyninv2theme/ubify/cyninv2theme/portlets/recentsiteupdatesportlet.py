@@ -171,10 +171,16 @@ class Renderer(base.Renderer):
             strpath = "/".join(self.context.getPhysicalPath())        
         
         objpath = {'query':strpath}
-        objresults = self.catalog(path=objpath,
-                            portal_type=types,
-                            sort_on='lastchangedate',
-                            sort_order='reverse')
+        if types == 'Document':
+            objresults = self.catalog(path=objpath,
+                                portal_type=types,
+                                sort_on='sortable_title',
+                                sort_order='ascending')
+        else:
+            objresults = self.catalog(path=objpath,
+                                portal_type=types,
+                                sort_on='lastchangedate',
+                                sort_order='reverse')
         
         self.data.resultscount[ptypes] = (len(objresults) - limit)
         return objresults[:limit]
