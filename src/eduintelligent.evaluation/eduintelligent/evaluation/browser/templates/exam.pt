@@ -32,7 +32,8 @@
     
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main" tal:define="foo context/initTrack;
-                                                          canTake context/canTakeExam">
+                                                          canTake context/canTakeExam;
+														  canModify context/hasModifyPortalContentPermission">
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
         <div tal:replace="structure provider:plone.abovecontentbody" />
@@ -92,22 +93,22 @@
         <a class="whitebutton cluetipnoie add"
            title = "El alumno escribe su respuesta en un cuadro de texto para su posterior evaluaci&oacute;n por parte del maestro."
            href="createObject?type_name=QuestionFillIn"
-           tal:attributes="href string:${here_url}/createObject?type_name=QuestionFillIn" 
-           i18n:translate="">
+           tal:attributes="href string:${here_url}/createObject?type_name=QuestionFillIn"
+		   tal:condition="canModify">
            <img src="icon-add.png" 
                 tal:attributes="src string:${portal_url}/icon-add.png"/> Pregunta abierta</a>
         <a class="whitebutton cluetipnoie add"
            title = "El alumno selecciona una o varias respuestas de una lista."
            href="createObject?type_name=QuestionChoice"
-           tal:attributes="href string:${here_url}/createObject?type_name=QuestionChoice" 
-           i18n:translate="">
+           tal:attributes="href string:${here_url}/createObject?type_name=QuestionChoice"
+		   tal:condition="canModify">
            <img src="icon-add.png" 
                 tal:attributes="src string:${portal_url}/icon-add.png"/> Opci&oacute;n m&uacute;ltiple</a>
         <a class="whitebutton cluetipnoie calificaciones"
            title = "Reportes varios acerca de este examen."
            href="@@calificaciones-y-reportes"
            tal:attributes="href string:${here_url}/@@calificaciones-y-reportes" 
-           i18n:translate="">
+           tal:condition="canModify">
            <img src="icon-application_form.png" 
                 tal:attributes="src string:${portal_url}/icon-application_form.png"/> Calificaciones y reportes</a>
                 
@@ -116,20 +117,20 @@
         <div style="display:block; float: right;">
         <table class="vertical listing">
               <tr>
-                <th colspan="2" i18n:translate="">Details</th>
+                <th colspan="2">Detalles del examen</th>
               </tr>
               <tr>
-                <th i18n:translate="">Questions</th>
+                <th>No. de Preguntas</th>
                 <td tal:content="context/getNumberUserQuestion"></td>
               </tr>
               <tr>
-                <th i18n:translate="">Start</th>
+                <th>Fecha y hora de inicio</th>
                 <td tal:content="structure python:context.toLocalizedTime(context.getInitDate(),long_format=1)">
                     2007/11/21
                 </td>
               </tr>
               <tr>
-                <th i18n:translate="">End</th>
+                <th>Fecha y hora de fin</th>
                 <td tal:content="structure python:context.toLocalizedTime(context.getFinishDate(),long_format=1)">
                     2007/12/05
                 </td>
@@ -141,7 +142,7 @@
                 </td>
               </tr> 
               <tr>
-                <th i18n:translate="">Min Score</th>
+                <th>Cal. m&iacute;nima aprobatoria</th>
                 <td tal:content="context/getMinScoreGrade"> 100 </td>
               </tr>
               

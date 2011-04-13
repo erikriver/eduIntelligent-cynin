@@ -8,8 +8,7 @@
 </head>
 
 <body>
-<div metal:fill-slot="main"
-    tal:define="results context/getPendingUsers;">
+<div metal:fill-slot="main">
     
     <div tal:replace="structure provider:plone.abovecontenttitle" />
 
@@ -17,7 +16,7 @@
 
     <div tal:replace="structure provider:plone.abovecontentbody" />
               
-    <table class="listing">
+    <table class="listing" tal:define="results context/getPendingUsers">
       <thead>
       <tr>
         <th i18n:translate="">No</th>

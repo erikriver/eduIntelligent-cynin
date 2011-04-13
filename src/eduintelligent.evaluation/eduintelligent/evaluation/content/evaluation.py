@@ -8,6 +8,9 @@ import time
 from zope.interface import implements
 #from zope.component import getUtility
 
+from AccessControl import getSecurityManager
+from Products.CMFCore.permissions import ModifyPortalContent
+
 from Products.ATContentTypes.content import folder
 from Products.CMFCore.utils import getToolByName
 
@@ -502,6 +505,15 @@ class Evaluation(folder.ATFolder):
     def getEvaluationNameAndLink(self):
         return self.Title() + '|' + self.absolute_url()
 
+    #############
+    # Permissions
+    #############
+    def hasModifyPortalContentPermission(self):
+        """
+        Return True if the current user can modify content on this context.
+        """
+        sm = getSecurityManager()
+        return sm.checkPermission(ModifyPortalContent,self)
     #############
     # Statistics
     #############
