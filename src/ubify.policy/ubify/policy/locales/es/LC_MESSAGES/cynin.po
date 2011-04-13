@@ -2310,7 +2310,7 @@ msgstr "Creado por:"
 #. Default: "free open source edition"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/__init__.py:950
 msgid "cynin_community_edition"
-msgstr "libre de código abierto edición"
+msgstr "Blufrog"
 
 #. Default: "enterprise edition"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/__init__.py:946
@@ -2525,7 +2525,7 @@ msgstr "descriptionloggedinexplain"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/mail_password_form.pt:61
 #, fuzzy
 msgid "description_lost_password"
-msgstr "descriptionlostpassword"
+msgstr "Para recuperar tu contraseña debes escribir tu nombre de usuario en el cuadro de texto y presionar el botón 'Restablecer contraseña'. Posteriormente te enviaremos un correo electrónico con las instrucciones para recuperar tu contraseña."
 
 #. portlets assigned to this group. Use the up, down, delete and edit links to
 #. manage user portlets. Use the drop-down list to add new portlets."
@@ -3014,7 +3014,7 @@ msgstr "Recordar contraseña Cambiar contraseña para ${user}"
 #. Default: "Contact Administration Staff"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/admin-contact-info.cpt:59
 msgid "heading_contact_form"
-msgstr "Contacto Personal de la Administración"
+msgstr "Contacte a los administradores del sitio."
 
 #. Default: "Content views"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/browser/manage-dashboard.pt:65
@@ -3443,7 +3443,7 @@ msgstr "helpsyndication"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/signup_form.cpt:91
 #, fuzzy
 msgid "help_user_name_creation_casesensitive"
-msgstr "helpusernamecreationcasesensitive"
+msgstr "Escriba su nombre de usuario. Ejemplos: 'jperez', 'rluviano'. Por favor, no use espacios, acentos ni caracteres especiales."
 
 #. Default: "Enter your user name for verification."
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/pwreset_form.cpt:71
@@ -5411,7 +5411,7 @@ msgstr "portalcannotlogouthttpbasicauth"
 #. Default: "You are now logged out."
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/logged_out.cpt:73
 msgid "portal_status_logged_out"
-msgstr "Usted está tu sesión."
+msgstr "Has salido del sistema."
 
 #. Default: "Block"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/browser/edit-manager-contextual.pt:67

@@ -179,7 +179,7 @@ Mumbai-400064, India
                                        name="submit"
                                        onclick="javascript:jq('form').submit()"
                                        >
-                                    cyn in <img tal:attributes="src string:${portal_url}/cynin_fav2.png" />
+                                    Entrar <img tal:attributes="src string:${portal_url}/cynin_fav2.png" />
                                 </a>
                             </div>
                         </div>
@@ -207,14 +207,10 @@ Mumbai-400064, India
                                        tal:attributes="href string:${portal_url}/admin-contact-info">Contact Staff</a>
                                 </div>
                                 <tal:smallcolophon metal:define-macro="cynin_small_colophon">
-                                    <div class="cyninsmallcolophon biggerlink"
-                                        tal:define="
-                                        version python:modules['ubify.cyninv2theme'].CyninVersion(context);
-                                        edition python:modules['ubify.cyninv2theme'].CyninEdition(context);
-                                        ">
-                                        <a href="http://www.cynapse.com/cynin"
+                                    <div class="cyninsmallcolophon biggerlink">
+                                        <a href="http://www.iservices.com.mx"
                                            target="_blank"
-                                            class="smallcolophonmainlink"><tal:translate i18n:translate="">Powered by cyn.in v</tal:translate><tal:version tal:content="version" /> - <tal:edition tal:content="python: len(edition) > 0 and edition[0] or ''" /></a>
+                                            class="smallcolophonmainlink"> Blufrog es un proyecto de iServices de M&eacute;xico</a>
                                     </div>
                                 </tal:smallcolophon>
                             </tal:macro>

@@ -3378,7 +3378,7 @@ input.smallwhitebutton
         padding:4px 10px;
         border-color:&dtml-cigray9;;
         height:1.25em;
-	width:74px;
+	width:90px;
 }
 .whitebutton.loginbutton:hover
 ,.helpblockrow.cynindesktopbuttoncontainer.integrationbutton.hover
@@ -3400,7 +3400,7 @@ input.smallwhitebutton
         background: &dtml-ciwhite; url("&dtml-portal_url;/g-white-l.gif") repeat-x left bottom;
         border:1px solid &dtml-cigray9;;
         margin:0 auto;
-        max-width:500px;
+        max-width:515px;
         position:relative;
 }
 .loginfieldcontainer
