@@ -4422,7 +4422,7 @@ msgstr "Mostrar todos"
 #. Default: "Contact Staff"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/login_form.cpt:205
 msgid "label_site_admin"
-msgstr "Contacto Personal"
+msgstr "Contáctanos"
 
 #. Default: "Site Logo"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/sitelogo_settings.cpt:107
