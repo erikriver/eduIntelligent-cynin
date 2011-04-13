@@ -180,6 +180,9 @@
 									<tal:block replace="structure provider:ubify.itemtitlemanager" />
                                 </div>
                                 <tal:block replace="structure provider:ubify.applicationsmenu" />
+								<div class="actionsmenurow">
+								<tal:block replace="structure provider:ubify.contentactionsmanager" />
+								</div>
                                 <metal:block define-slot="author_slot"></metal:block>
                             </div>
                             <div id="portal-titlebar" tal:condition="python:context.portal_type not in ('ContentRoot','MemberSpace','ContentSpace','Course')">
