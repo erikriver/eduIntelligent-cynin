@@ -803,11 +803,11 @@ msgstr "Viernes"
 
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/browser/userinfo.pt:124
 msgid "Full User Profile"
-msgstr "Lleno de perfil de usuario"
+msgstr "Ver el perfil completo"
 
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/prefs_groups_overview.cpt:54
 msgid "Group Management"
-msgstr "Grupo de Gestión de"
+msgstr "Administrar grupos"
 
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/prefs_group_members.cpt:58
 msgid "Group Members"
