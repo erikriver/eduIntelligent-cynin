@@ -3175,7 +3175,7 @@ input.smallwhitebutton
 }
 .maincontentholder img,.maincontentholder tbody
 {
-    overflow:auto; /*Any content inside our item holder which spreads more than it can should automatically get scrollbars. This is better than making the whole content holder scroll because usually the height is also a lot in this case.*/
+    /*overflow:scroll;*/ /*Any content inside our item holder which spreads more than it can should automatically get scrollbars. This is better than making the whole content holder scroll because usually the height is also a lot in this case.*/
 }
 .blog-entry.maincontentholder
 {
