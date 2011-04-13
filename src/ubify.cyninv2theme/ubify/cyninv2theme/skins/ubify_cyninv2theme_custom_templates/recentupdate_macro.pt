@@ -53,7 +53,13 @@ Mumbai-400064, India
                 <img src="" tal:condition="python: item_type == 'Video'" tal:attributes="src string:${portal_url}/icon-film.png"/>
                 <img src="" tal:condition="python: item_type == 'Audio'" tal:attributes="src string:${portal_url}/icon-sound.png"/>
                 <a href="#" tal:attributes="href python:here.evalURL(item_type,use_view_action,item_url);
-                        class string:${item_wf_state_class} url" tal:content="item_title_or_id" />
+                        class string:${item_wf_state_class} url" 
+                            tal:content="item_title_or_id" 
+                            tal:condition="python: item_type not in ('Discussion',)"/>
+                <a href="#" tal:attributes="href python:here.evalURL(item_type,use_view_action,item_url);
+                        class string:${item_wf_state_class} url" 
+                            tal:content="structure item_title_or_id" 
+                            tal:condition="python: item_type in ('Discussion',)"/>
             </div>
             <tal:translate>
                 <div class="recentupdateitemauthorrow" tal:condition="not: showonlydate|nothing" i18n:translate="text_last_action">
