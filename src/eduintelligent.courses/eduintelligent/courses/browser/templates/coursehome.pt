@@ -9,6 +9,20 @@
     <metal:block metal:fill-slot="head_slot">
         <tal:rssmacro metal:use-macro="here/rss_macro/macros/rss_macro" />
     </metal:block>
+    <metal:css fill-slot="css_slot">
+        <style type="text/css">
+        .actionsmenurow >*{
+            float:right;
+        }
+        
+        .actionsmenurow .actionMenuHeader a {
+            color: #666666;
+        }
+        #plone-contentmenu-actions{
+            display:none;        
+        }
+        </style>
+    </metal:css>
 </head>
 <body>
     <div class="homepagefullcontainer" metal:fill-slot="contentwithnopadding"
