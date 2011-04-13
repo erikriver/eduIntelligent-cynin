@@ -2195,14 +2195,14 @@ msgstr "Configurar WebDAV para cargar archivo directa / download"
 #. Default: "Log out from this cyn.in site"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/browser/topbarmybutton.pt:109
 msgid "cluetip_log_out"
-msgstr "Cierre la sesión de este sitio cyn.in"
+msgstr "Cerrar la sesión en Blufrog"
 
 #. are case sensitive"
 #. Default: "<strong>Please enter your username</strong><br />cyn.in usernames are case sensitive"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/login_form.cpt:135
 #, fuzzy
 msgid "cluetip_login_textbox"
-msgstr "cluetiplogintextbox"
+msgstr "<strong>Escribe tu nombre de usuario</strong>. Las may&uacute;sculas y las min&uacute;sculas si importan."
 
 #. or click on cyn.in"
 #. Default: "<strong>Please enter your password</strong><br /> and hit 'Enter' or click on cyn.in"

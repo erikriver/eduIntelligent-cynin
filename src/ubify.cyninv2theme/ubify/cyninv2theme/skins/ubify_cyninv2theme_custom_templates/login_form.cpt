@@ -134,8 +134,7 @@ Mumbai-400064, India
                                         </div>
                                         <input type="text"
                                                class="logininputtext textfieldtipBottom"
-                                               title="<strong>Please enter your username</strong><br />cyn.in usernames are case sensitive"
-                                               i18n:attributes="title cluetip_login_textbox"
+                                               title="<strong>Escribe tu nombre de usuario</strong>. Las may&uacute;sculas y las min&uacute;sculas s&iacute; importan."
                                                tal:attributes="name ac_name;
                                                                id ac_name;
                                                                value login_name;"
@@ -152,8 +151,7 @@ Mumbai-400064, India
                                                    class="loginlabel">Password:</label></div>
                                             <input type="password"
                                                class="passwordinputtext textfieldtipBottom"
-                                               i18n:attributes="title cluetip_password_textbox;"
-                                               title="<strong>Please enter your password</strong><br /> and hit 'Enter' or click on cyn.in"
+                                               title="<strong>Escribe tu contrase&ntilde;a</strong>. Las may&uacute;sculas y las min&uacute;sculas s&iacute; importan."
                                                    tal:attributes="name ac_password;
                                                                    id ac_password;"
                                                    />
