@@ -44,7 +44,7 @@ from Products.CMFCore.utils import getToolByName
 from zope.component import getUtility,getAdapters
 from zope.app.publisher.interfaces.browser import IBrowserMenu
 
-from ubify.policy.config import spacesdefaultaddablenonfolderishtypes
+from ubify.policy.config import spacesdefaultaddablenonfolderishtypes, spacesdefaultaddableforfolders
 from Acquisition import aq_inner, aq_base, aq_parent
 from ubify.cyninv2theme import checkHasPermission, getRootID, getLocationListForAddContent, canAddContent, getBestMatchedLocationForAddingContent, getDisallowedTypes
 
@@ -102,7 +102,16 @@ class AddNewMenuViewlet(ViewletBase):
                                              'title': object_typeobj.Title(), 
                                              'description':object_typeobj.Description(),
                                              'icon': object_typeobj.content_icon})
-            
+                    
+            if self.context.portal_type == 'Folder':
+                self.addnewitems = []
+                for eachtype in spacesdefaultaddableforfolders:
+                    object_typeobj = typetool[eachtype]
+                    if object_typeobj <> None:
+                        self.addnewitems.append({'id': object_typeobj.id, 
+                                                 'title': object_typeobj.Title(), 
+                                                 'description':object_typeobj.Description(),
+                                                 'icon': object_typeobj.content_icon})
             self.addnewcontainers = []
             containers = ['ContentSpace', 'Course', 'Folder']
             for eachtype in containers:
@@ -140,11 +149,11 @@ class AddNewMenuViewlet(ViewletBase):
                     self.contextuid = objRoot.UID()
                     self.contextdisallowedtypes = objRoot.disallowedtypes()
             else:
-                if object_typename in ('ContentRoot','ContentSpace', 'Course') and self.context.isPrincipiaFolderish and checkHasPermission('Add portal content',aq_inner(self.context)):                
+                if object_typename in ('ContentRoot','ContentSpace', 'Course','Folder') and self.context.isPrincipiaFolderish and checkHasPermission('Add portal content',aq_inner(self.context)):                
                     self.currentcontextmenu = menu.getMenuItems(self.context, self.request)
                     self.contextualurl = aq_inner(self.context).absolute_url()
                     
-                    if object_typename in ('ContentRoot','ContentSpace','Course'):
+                    if object_typename in ('ContentRoot','ContentSpace','Course','Folder'):
                         self.currentcontexttitle = context_state.object_title()
                         self.contextuid = aq_inner(self.context).UID()
                         self.contextdisallowedtypes = (aq_inner(self.context)).disallowedtypes()

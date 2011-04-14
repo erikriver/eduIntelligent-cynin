@@ -90,6 +90,13 @@ spacesdefaultaddableforcourses = ('Document',
                                   'Quiz',
                                   'Exam'
                                   )
+spacesdefaultaddableforfolders = ('Document',
+                                  'File',
+                                  'Image',
+                                  'Link',
+                                  'Video',
+                                  'Audio'
+                                  )
 sitetabs = ({'id':'central',
              'name':'Central',
              'url_expr':'string:$portal_url/spaces/central',
