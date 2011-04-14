@@ -26,6 +26,7 @@
   <element value="SCO"/>
   <element value="Quiz"/>
   <element value="Exam"/>
+  <element value="Folder"/>
  </property>
  <property name="allow_discussion">True</property>
  <property name="default_view">dashboard</property>

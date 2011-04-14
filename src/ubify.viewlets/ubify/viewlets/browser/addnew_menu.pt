@@ -75,17 +75,17 @@ Mumbai-400064, India
         </div>
         <fieldset id="addcontainerlegend" class="contentheaderlabel addnewscreenlabel" 
                   tal:attributes="class python:('ContentSpace' in view.contextdisallowedtypes and 'contentheaderlabel addnewscreenlabel hidden') or 'contentheaderlabel addnewscreenlabel'"
-                  tal:condition="python: not(context.portal_type=='Course')">
+                  >
             <legend i18n:translate="">Container</legend>
         </fieldset>
         <div id="addnewspaceholder" 
-             tal:attributes="class python:'ContentSpace' in view.contextdisallowedtypes and 'hidden'"
-             tal:condition="python: not(context.portal_type=='Course')">
-            <tal:items tal:repeat="action view/addnewcontainers">
-                <div tal:attributes="id string:addnewaction-${action/id};" class="addnewactionholder">
-                    <a class="addselector" 
+             tal:attributes="class python:'ContentSpace' in view.contextdisallowedtypes and 'hidden'">
+                <div tal:define="action python:view.addnewcontainers[0]"
+                    tal:attributes="id string:addnewaction-${action/id};" class="addnewactionholder">
+                    <a class="addselector"
+                        
                         tal:attributes="rel python:action['id'];href string:${view/contextualurl}/createObject?type_name=${action/id}"
-                        tal:condition="python: not (context.portal_type=='Course') and not(action['id'] == 'Course')">
+                        tal:condition="python: context.portal_type in ('ContentRoot','ContentSpace')">
                         <img alt="" src=""
                              tal:condition="action/icon"
                              tal:attributes="src action/icon; alt action/title;"
@@ -93,8 +93,11 @@ Mumbai-400064, India
                         <span tal:content="action/title" class="addnewtypetitle"/>
                         <div tal:content="action/description" class="addnewtypedescription discreet" />
                     </a>
-                    <a class="addselector" 
-                        tal:condition="python: action['id'] == 'Course' and context.portal_type=='ContentRoot'"
+                </div>
+               <div tal:define="action python:view.addnewcontainers[1]"
+                    tal:attributes="id string:addnewaction-${action/id};" class="addnewactionholder">
+                    <a class="addselector"
+                        tal:condition="python: context.portal_type in ('ContentRoot',)"
                         tal:attributes="rel python:action['id'];href string:${view/contextualurl}/createObject?type_name=${action/id}">
                         <img alt="" src=""
                              tal:condition="action/icon"
@@ -103,9 +106,20 @@ Mumbai-400064, India
                         <span tal:content="action/title" class="addnewtypetitle"/>
                         <div tal:content="action/description" class="addnewtypedescription discreet" />
                     </a>
-
                 </div>
-            </tal:items>
+               <div tal:define="action python:view.addnewcontainers[2]"
+                    tal:attributes="id string:addnewaction-${action/id};" class="addnewactionholder">
+                    <a class="addselector"
+                        tal:condition="python: context.portal_type in ('Course','Folder')"
+                        tal:attributes="rel python:action['id'];href string:${view/contextualurl}/createObject?type_name=${action/id}">
+                        <img alt="" src=""
+                             tal:condition="action/icon"
+                             tal:attributes="src action/icon; alt action/title;"
+                             class="addnewtypeicon"/>
+                        <span tal:content="action/title" class="addnewtypetitle"/>
+                        <div tal:content="action/description" class="addnewtypedescription discreet" />
+                    </a>
+                </div>
         </div>
 
 

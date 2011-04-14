@@ -104,7 +104,7 @@ class AddNewMenuViewlet(ViewletBase):
                                              'icon': object_typeobj.content_icon})
             
             self.addnewcontainers = []
-            containers = ['ContentSpace', 'Course']
+            containers = ['ContentSpace', 'Course', 'Folder']
             for eachtype in containers:
                 object_typeobj = typetool[eachtype]
                 if object_typeobj <> None:
