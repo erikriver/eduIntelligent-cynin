@@ -825,17 +825,17 @@ msgstr "Teléfono de la casa"
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/portlets/spacemembersportlet.py:60
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/portlets/wikiportlet.py:58
 msgid "How many items to list."
-msgstr "¿Cuántos elementos a la lista."
+msgstr "Definir cuántos elementos a mostrar en la lista."
 
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/portlets/activityportlet.py:61
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/portlets/blogportlet.py:58
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/portlets/commentsportlet.py:58
 msgid "How many items to list?"
-msgstr "¿Cuántos elementos a la lista?"
+msgstr "¿Cuántas elementos hay que listar?"
 
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/portlets/tagsportlet.py:61
 msgid "How many tags to list?"
-msgstr "Como muchas etiquetas a la lista?"
+msgstr "¿Cuántas etiquetas hay que listar?"
 
 #: ../../../../ubify.cyninv2theme/ubify/cyninv2theme/skins/ubify_cyninv2theme_custom_templates/sitelogo_settings.cpt:115
 msgid "If you have uploaded a new logo and it does not appear immediately, ${away_url} from this page and clear your web browser's cache. This can be done in most browsers by pressing Ctrl + F5 or Ctrl + R."
